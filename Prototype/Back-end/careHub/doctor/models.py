@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+class Doctor(models.Model):
+    name=models.CharField()
+    expertise=models.CharField()
+    availability=models.BooleanField()
+    rating=models.PositiveIntegerField()

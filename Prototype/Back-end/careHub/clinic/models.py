@@ -1,3 +1,6 @@
 from django.db import models
 
-# Create your models here.
+class Clinic(models.Model):
+    name=models.CharField()
+    doctors=models.SlugField()
+    availability=models.BooleanField()
