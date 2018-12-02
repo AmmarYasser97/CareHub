@@ -21,7 +21,9 @@
     .font-here{
     color: #FFFFFF;
     }
-
+img {
+	border : 2px solid #37c1cc;
+	}
   </style>
   </head>
 
@@ -33,7 +35,7 @@
             <a class="navbar-brand" href="#"><img src="https://scontent-cai1-1.xx.fbcdn.net/v/t1.15752-9/46631803_198910884352825_9199939240748646400_n.png?_nc_cat=102&_nc_ht=scontent-cai1-1.xx&oh=2d41c3db247d0376e9045c552ecfba23&oe=5CB25234"  width="130"></a>
             </div>
             <ul class="nav navbar-nav">
-              <li><a href="index.html">Home</a></li>
+              <li><a href="#">Home</a></li>
               <li class="dropdown">
                 <a style="color:white;" class="dropdown-toggle" data-toggle="dropdown" href="#">Services
                 <span class="caret"></span></a>
@@ -56,15 +58,16 @@
                   </div>
                 </form> 
               <ul class="nav navbar-nav navbar-right">
-                      <li><a style="color:white;" href="signUP.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                      <li><a style="color:white;" href="singIN.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                      <li><a style="color:white;" href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                      <li><a style="color:white;" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
               </ul>
           </div>
         </nav>
   <div class = "jumbotron" style = "background:transparent">
-    <h1 style = "font family:Solomon; color:#37c1cc;" align = "center">My Profile</h1>
-  </div>
-  <ul class="nav nav-tabs">
+  <img class = "img-circle" src ="patient.jpg" width = "200" height = "200" >
+    <h2 style = "font family:Solomon; color:#37c1cc;"> Patient 1 </h2>
+  
+  <ul class="nav nav-tabs" style = "font family:Solomon; color:#37c1cc;">
   <li class="active"><a data-toggle="tab" href="#home">Basic info</a></li>
   <li><a data-toggle="tab" href="#menu1">Medical History</a></li>
   <li><a data-toggle="tab" href="#menu2">Additional info</a></li>
@@ -72,70 +75,156 @@
 
 <div class="tab-content">
   <div id="home" class="tab-pane fade in active">
-    <p><b>Name :</b></p>
-    <p><b>Age :</b></p>
-	<p><b>Blood Type :</b>
-	<select name="bloodtype">
+    <table class="table">
+	<tbody>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Age </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> 22 </h4> </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Blood Type </h4> </td>
+        <td>
+		<select name="bloodtype" style = "font family:Solomon; color:#23797f;">
   <option value="A negative">A negative</option>
   <option value="A postive">A postive</option>
   <option value="B postive">B postive</option>
   <option value="B negative">B negative</option>
-<option value="B negative">O negative</option>
-<option value="O postive">O Postive</option>
-<option value="O negative">B negative</option>
-<option value="AB negative">AB negative</option>
-<option value="AB postive">AB postive</option>
+  <option value="B negative">O negative</option>
+  <option value="O postive">O Postive</option>
+  <option value="O negative">B negative</option>
+  <option value="AB negative">AB negative</option>
+  <option value="AB postive">AB postive</option>
 
 
 </select>
-	</p>
-	<p><b>Weight :</b></p>
-   <p><b>Height :</b></p>
-	<p><b>Emergency contact :</b></p>
+ </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Weight </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> 60 </h4> </td>
+      </tr>
+	  <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Height </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> 160 </h4> </td>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Emergency Contact </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> 4839449 </h4> </td>
+      </tr>
+	  
+	  </tr>
+	  
+    </tbody>
+  
 	
+	</table>
 	
   </div>
   <div id="menu1" class="tab-pane fade">
     
-	<p><b>Allergies :</b></p>
-    <p><b>Organ donor :</b>
-	<div class="radio">
+	<table class="table">
+	<tbody>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Allergies </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> Nuts </h4> </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Organ Donor </h4> </td>
+        <td>
+		<div class="radio" style = "font family:Solomon; color:#23797f;">
   <label><input type="radio" name="optradio" checked>YES</label>
 </div>
-<div class="radio">
+<div class="radio" style = "font family:Solomon; color:#23797f;">
   <label><input type="radio" name="optradio">NO</label>
 </div>
-</p>
-	<p><b>Medications :</b></p>
-	<p><b>Past operations :</b></p>
-    <p><b>Family history :</b></p>
-	<p><b>Reports :</b>
-	<form action="/action_page.php">
-  Select a file: <input type="file" name="myFile"><br><br>
-  <input type="submit">
-</form>
-	</p>
+ </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Medications </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> None </h4> </td>
+      </tr>
+	  <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Past operations </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> None </h4> </td>
+		</tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Family History </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> Diabetes </h4> </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Reports </h4> </td>
+        <td> 
+		     <form action="/action_page.php" style = "font family:Solomon; color:#23797f;">
+                Select a file: <input type="file" name="myFile"><br><br>
+                <input type="submit">
+             </form>
+	     </td>
+      </tr>
+	  
+	  
+	  
+    </tbody>
+  
+	
+	</table>
+	
   </div>
   <div id="menu2" class="tab-pane fade">
     
-    <p><b>Smoker :</b><div class="radio">
+    <table class="table">
+	<tbody>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;">Athletic</h4> </td>
+        <td>
+		<div class="radio" style = "font family:Solomon; color:#23797f;">
   <label><input type="radio" name="optradio" checked>YES</label>
 </div>
-<div class="radio">
+<div class="radio" style = "font family:Solomon; color:#23797f;">
   <label><input type="radio" name="optradio">NO</label>
-</div></p>
-	<p><b>Athletic :</b>
-	<div class="radio">
+</div>
+ </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Smoker </h4> </td>
+        <td>
+		<div class="radio" style = "font family:Solomon; color:#23797f;">
   <label><input type="radio" name="optradio" checked>YES</label>
 </div>
-<div class="radio">
+<div class="radio" style = "font family:Solomon; color:#23797f;">
   <label><input type="radio" name="optradio">NO</label>
-</div></p>
-	<p><b>Contact :</b></p>
-    <p><b>E-mail :</b></p>
+</div>
+ </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Contact </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> 38473674</h4> </td>
+      </tr>
+	  <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> E-mail </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> patient@gmail.com </h4> </td>
+		</tr>
+      
+	  
+	  
+	  
+    </tbody>
+  
+	
+	</table>
 	
 	
   </div>
 </div>
+  </div>
+  
+  </br>
+
+  <footer style = "background-color: #37c1cc" width = "100%">
+  <div class="row">
+  <div class="col-lg-12" align = "center">
+  <p align = "center">© 2018 Copyright</p>
+  </div>
+  </div>
+  </footer>
+
   </body>
   </html>
