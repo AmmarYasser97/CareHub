@@ -1,6 +1,6 @@
 # SE2018G10
 
-##Brief
+## - Brief
 CareHub Health Care System is a system that enables patients to accomplish three
 tasks easily:
 1) Find the right health provider to get treatment.
@@ -13,7 +13,7 @@ home through this website.
 
 All the needed information about the hospital will be available for the user.
 
-##Team Members
+## - Team Members
 1-Ahmed Ganzouri
 2-Salma Tarek
 3-Mohammed Okasha
@@ -34,6 +34,6 @@ All the needed information about the hospital will be available for the user.
 ## A video showing the Receptionist's interface prototype:
 (https://www.youtube.com/watch?v=pKk7kWyZpXk)
 
-##The SRS Google DOCS Link
+## - The SRS Google DOCS Link
 (https://docs.google.com/document/d/11ixGLnn64_Z2Be5ZkFz8WyHxl_e6dgNuqvuD8W3TUCs/edit?usp=sharing)
 
