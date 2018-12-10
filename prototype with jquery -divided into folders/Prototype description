@@ -1,0 +1,11 @@
+Our Prototype is a full front end prototype for the user interface,
+it's implemented using html, css, and bootstrap
+
+A video showing the whole user interface:
+https://www.youtube.com/watch?v=ybaoZFZPSXY
+
+A video showing the Receptionist interface:
+https://www.youtube.com/watch?v=pKk7kWyZpXk
+
+NOTICE THAT: the receptionist interface is for the booking appointments while on ground in the hospital, 
+this interface is available for the receptionists in the hospital ONLY.
