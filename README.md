@@ -40,6 +40,8 @@ All the needed information about the hospital will be available for the user.
 See also the list of [contributors](https://github.com/ganzourii/SE2018G10/graphs/contributors) who participated in this project.
 
 ## additional notes
+- Final Version of SRS can be found in SRS_Final_Version folder
+
 - Prototype files can be found in the 'Prototype' folder
 
 - A video Showing The Whole user interface prototype:
@@ -48,5 +50,5 @@ See also the list of [contributors](https://github.com/ganzourii/SE2018G10/graph
 - A video showing the Receptionist's interface prototype:
 (https://www.youtube.com/watch?v=pKk7kWyZpXk)
 
--Final Version of SRS can be found in SRS_Final_Version folder.
+
 
