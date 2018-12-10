@@ -48,6 +48,5 @@ See also the list of [contributors](https://github.com/ganzourii/SE2018G10/graph
 - A video showing the Receptionist's interface prototype:
 (https://www.youtube.com/watch?v=pKk7kWyZpXk)
 
-- The SRS Google DOCS Link
-(https://docs.google.com/document/d/11ixGLnn64_Z2Be5ZkFz8WyHxl_e6dgNuqvuD8W3TUCs/edit?usp=sharing)
+-Final Version of SRS can be found in SRS_Final_Version folder.
 
