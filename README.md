@@ -26,20 +26,20 @@ All the needed information about the hospital will be available for the user.
 
 ## Authors
 
-* **Ahmed Ganzouri** - *Initial work* - [ganzourii](https://github.com/ganzourii)
-* **Ammar Yasser** - *Initial work* - [AmmarYasser97](https://github.com/AmmarYasser97)
-* **Mohammed Okasha** - *Initial work* - [Mokashaa](https://github.com/Mokashaa)
-* **Mohammed Hesham** - *Initial work* - [MHesham98](https://github.com/MHesham98)
-* **Khaled Mohammed** - *Initial work* - []()
-* **Khaled Abdelglil** - *Initial work* - [khaledlooda](https://github.com/khaledlooda)
-* **Ahmed Anwar** - *Initial work* - [AhmedAnwar97](https://github.com/AhmedAnwar97)
-* **Omar Ibrahim** - *Initial work* - [mr-rofl](https://github.com/mr-rofl)
-* **Salma Tarek** - *Initial work* - [salma97](https://github.com/salma97)
-* **Mariam El Sayed Omar** - *Initial work* - [mariamelsaayed](https://github.com/mariamelsaayed)
+* **Ahmed Ganzouri** - [ganzourii](https://github.com/ganzourii)
+* **Ammar Yasser** - [AmmarYasser97](https://github.com/AmmarYasser97)
+* **Mohammed Okasha** - [Mokashaa](https://github.com/Mokashaa)
+* **Mohammed Hesham** - [MHesham98](https://github.com/MHesham98)
+* **Khaled Abdelglil** - [khaledlooda](https://github.com/khaledlooda)
+* **Ahmed Anwar** - [AhmedAnwar97](https://github.com/AhmedAnwar97)
+* **Omar Ibrahim** - [mr-rofl](https://github.com/mr-rofl)
+* **Salma Tarek** - [salma97](https://github.com/salma97)
+* **Mariam El Sayed Omar** - [mariamelsaayed](https://github.com/mariamelsaayed)
+* **Khaled Mohammed** - []()
 
 See also the list of [contributors](https://github.com/ganzourii/SE2018G10/graphs/contributors) who participated in this project.
 
-## additional notes
+## Additional notes
 - Final Version of SRS can be found in SRS_Final_Version folder
 
 - Prototype files can be found in the 'Prototype' folder
