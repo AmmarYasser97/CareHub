@@ -1,13 +1,19 @@
-from django.contrib.auth.models import User
-from django.contrib.auth import login
+from django.contrib.auth.models import User, Group
+from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from .forms import RegisterForm
+from .forms import RegisterForm, LoginForm
 from django.shortcuts import redirect
+
+def is_receptionist(user):
+    return user.groups.filter(name='Receptionist').exists()
+
+def Receptionist (request):
+    return render(request, 'accounts/receptionist.html')
 
 def profile (request):
     return render(request, 'accounts/profile.html')
-# Create your views here.
+
 def SignUp (request):
             # if this is a POST request we need to process the form data
     template = 'accounts/signUP.html'
@@ -54,3 +60,26 @@ def SignUp (request):
         form = RegisterForm()
 
     return render(request, template, {'form': form})
+
+def SignIn (request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(request, username=username, password=password)
+            if (user is not None and is_receptionist(user)):
+                login(request, user)
+                return redirect ('accounts:receptionist')
+            elif user is not None:
+                login(request, user)
+                return redirect ('accounts:profile')
+            else:
+                return render (request, 'accounts/signIN.html',{'form':form, 'error_message':'username or password is incorrect'})
+    else:
+        form = LoginForm()
+    return render (request, 'accounts/signIN.html',{'form':form})
+
+def SignOut (request):
+    logout(request)
+    return render (request, 'index.html')
