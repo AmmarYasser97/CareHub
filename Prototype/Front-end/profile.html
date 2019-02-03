@@ -7,12 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
   p {
   font-size: 15px;
   padding:10px;
-  
+
   }
     .navbar-custom {
     color: #FFFFFF;
@@ -28,14 +28,14 @@
   </head>
 
 <body>
-	
+
 	<nav class="navbar navbar-default navbar-custom">
           <div class="container-fluid">
             <div class="navbar-header">
-            <a class="navbar-brand" href="#"><img src="https://scontent-cai1-1.xx.fbcdn.net/v/t1.15752-9/46631803_198910884352825_9199939240748646400_n.png?_nc_cat=102&_nc_ht=scontent-cai1-1.xx&oh=2d41c3db247d0376e9045c552ecfba23&oe=5CB25234"  width="130"></a>
+            <a class="navbar-brand" href="#"><img src="/static/carehubwhite.png"  width="130"></a>
             </div>
             <ul class="nav navbar-nav">
-              <li><a href="index.html">Home</a></li>
+              <li><a href="{% url 'home' %}">Home</a></li>
               <li class="dropdown">
                 <a style="color:white;" class="dropdown-toggle" data-toggle="dropdown" href="#">Services
                 <span class="caret"></span></a>
@@ -45,7 +45,7 @@
                   <li><a href="scans.html">Scans</a></li>
                 </ul>
               </li>
-              <li><a style="color:white;" href="#">Profile</a></li>
+
             </ul>
                <form class="navbar-form navbar-left" action="/action_page.php">
                   <div class="input-group">
@@ -56,10 +56,10 @@
                       </button>
                     </div>
                   </div>
-                </form> 
+                </form>
               <ul class="nav navbar-nav navbar-right">
-                      <li><a style="color:white;" href="signUP"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                      <li><a style="color:white;" href="signIN"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                      <li><a style="color:white;" href="#">Profile</a></li>
+                      <li><a style="color:white;" href="{% url 'accounts:signin' %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
               </ul>
           </div>
         </nav>
@@ -68,7 +68,7 @@
   <div class = "jumbotron" style = "background:transparent">
   <img class = "img-circle image" src ="patient.jpg" width = "200" height = "200" >
     <h2 style = "font family:Solomon; color:#37c1cc;"> Patient 1 </h2>
-  
+
   <ul class="nav nav-tabs" style = "font family:Solomon; color:#37c1cc;">
   <li class="active"><a data-toggle="tab" href="#home">Basic info</a></li>
   <li><a data-toggle="tab" href="#menu1">Medical History</a></li>
@@ -112,17 +112,17 @@
         <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Emergency Contact </h4> </td>
         <td> <h4 style = "font family:Solomon; color:#23797f;"> 4839449 </h4> </td>
       </tr>
-	  
+
 	  </tr>
-	  
+
     </tbody>
-  
-	
+
+
 	</table>
-	
+
   </div>
   <div id="menu1" class="tab-pane fade">
-    
+
 	<table class="table">
 	<tbody>
       <tr>
@@ -154,24 +154,24 @@
       </tr>
       <tr>
         <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Reports </h4> </td>
-        <td> 
+        <td>
 		     <form action="/action_page.php" style = "font family:Solomon; color:#23797f;">
                 Select a file: <input type="file" name="myFile"><br><br>
                 <input type="submit">
              </form>
 	     </td>
       </tr>
-	  
-	  
-	  
+
+
+
     </tbody>
-  
-	
+
+
 	</table>
-	
+
   </div>
   <div id="menu2" class="tab-pane fade">
-    
+
     <table class="table">
 	<tbody>
       <tr>
@@ -204,20 +204,20 @@
         <td> <h4 style = "font family:Solomon; color:#37c1cc;"> E-mail </h4> </td>
         <td> <h4 style = "font family:Solomon; color:#23797f;"> patient@gmail.com </h4> </td>
 		</tr>
-      
-	  
-	  
-	  
+
+
+
+
     </tbody>
-  
-	
+
+
 	</table>
-	
-	
+
+
   </div>
 </div>
   </div>
-  
+
   </br>
 
   <footer style = "background-color: #37c1cc" width = "100%">
