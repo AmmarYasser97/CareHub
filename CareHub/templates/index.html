@@ -14,7 +14,7 @@
 <body>
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="https://scontent-cai1-1.xx.fbcdn.net/v/t1.15752-9/46631803_198910884352825_9199939240748646400_n.png?_nc_cat=102&_nc_ht=scontent-cai1-1.xx&oh=2d41c3db247d0376e9045c552ecfba23&oe=5CB25234" hight=2 width=130></a>
+        <a class="navbar-brand" href="#"><img style = "vertical-align:center" src="/static/carehub.png" hight=2 width=130></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -31,24 +31,29 @@
                   <li><a class="nav-link text-here" href="scans.html">Scans</a></li>
                 </ul>
               </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Profile</a>
-            </li>
+
             </ul>
+
             <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
-                <button class="btn btn-outline-light btn-log btn-md" type="submit">Search</button>
+                <button class="btn btn-log btn-md" type="submit">Search</button>
               </form>
             <ul class="navbar-nav ml-auto">
+							{% if not request.user.is_authenticated %}
                       <li><a class="nav-link" href="{% url 'accounts:signup' %}">Sign Up</a></li>
-                      <li><a class="nav-link" href="signIN.html">Login</a></li>
+                      <li><a class="nav-link" href="{% url 'accounts:signin' %}">Login</a></li>
+							{% endif %}
+							{% if request.user.is_authenticated %}
+							<li><a class="nav-link" href="{% url 'accounts:profile' %}">Profile</a></li>
+							<li><a class="nav-link" href="{% url 'accounts:signout' %}">Logout</a></li>
+							{% endif %}
             </ul>
         </div>
     </div>
     </nav>
 
 <!--- Image Slider -->
-<div id="slides" class="carousel slide" data-ride="carousel">
+<div id="slides" class="carousel slide" data-ride="carousel" style = "height:20%">
     <ul class="carousel-indicators">
     <li data-target="#slides" data-slide-to="0" class="active"></li>
     <li data-target="#slides" data-slide-to="1"></li>
@@ -56,16 +61,22 @@
     </ul>
     <div class="carousel-inner">
     <div class="carousel-item active">
-        <img src="https://fullhdpictures.com/wp-content/uploads/2017/04/Hospital-Wallpaper-HD-e1491226679289.jpg">
-        <div class="carousel-caption">
-        <h1 class="display-2">SOLOMON</h1>
+        <img width ="100%" src="https://fullhdpictures.com/wp-content/uploads/2017/04/Hospital-Wallpaper-HD-e1491226679289.jpg">
+        <div style ="margin-bottom:250px" class="carousel-caption">
+        <h1 class="display-2">CareHUB hospital</h1>
         <h3>Full online service</h3>
             <button type="button" class="btn btn-outline-light btn-log btn-lg">About..</button>
             <button type="button" class="btn btn-primary btn-lg">Get Started</button>
         </div>
         </div>
     <div class="carousel-item">
-        <img src="http://c1.peakpx.com/wallpaper/109/174/394/clinic-doctor-health-hospital-wallpaper.jpg">
+        <img width ="100%" src="http://c1.peakpx.com/wallpaper/109/174/394/clinic-doctor-health-hospital-wallpaper.jpg">
+				<div style ="margin-bottom:300px"  class="carousel-caption">
+        <h1 class="display-2">CareHUB hospital</h1>
+        <h3>Full online service</h3>
+            <button type="button" class="btn btn-outline-light btn-log btn-lg">About..</button>
+            <button type="button" class="btn btn-primary btn-lg">Get Started</button>
+        </div>
         </div>
 <!--
     <div class="carousel-item">
@@ -134,7 +145,7 @@
         <a href="#" class="btn btn-primary">Learn more</a>
         </div>
     <div class="col-lg-6">
-        <img src="img/desk.png" class="img-fluid">
+        <img src="/static/img/desk.png" class="img-fluid">
         </div>
     </div>
     </div>
@@ -166,7 +177,7 @@
     <div class="row padding">
     <div class="col-md-4">
         <div class="card">
-        <img class="card-img-top" src="media/img/team1.png">
+        <img class="card-img-top" src="/static/img/team1.png">
         <div class="card-body">
             <h4 class="card-title">Ahmed Ganzouri</h4>
             <p class="card-text">...........................</p>
@@ -176,7 +187,7 @@
         </div>
     <div class="col-md-4">
         <div class="card">
-        <img class="card-img-top" src="media/img/team2.png">
+        <img class="card-img-top" src="/static/img/team2.png">
         <div class="card-body">
             <h4 class="card-title">Salma Tarek</h4>
             <p class="card-text">...........................</p>
@@ -186,7 +197,7 @@
         </div>
     <div class="col-md-4">
         <div class="card">
-        <img class="card-img-top" src="media/img/team3.png">
+        <img class="card-img-top" src="/static/img/team3.png">
         <div class="card-body">
             <h4 class="card-title">Mohammed Okasha</h4>
             <p class="card-text">...........................</p>
