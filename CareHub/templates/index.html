@@ -1,57 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Hospital | Welcome</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-	<link href="style.css" rel="stylesheet">
-</head>
-<body>
-<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img style = "vertical-align:center" src="/static/carehub.png" hight=2 width=130></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav nav">
-            <li class="nav-item active">
-            <a class="nav-link active" href="#">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Services</a>
-                <ul class="nav-item dropdown-menu">
-                  <li><a class="nav-link text-here" href="clinics.html">Clinics</a></li>
-                  <li><a class="nav-link text-here" href="Staff.html">Staff</a></li>
-                  <li><a class="nav-link text-here" href="scans.html">Scans</a></li>
-                </ul>
-              </li>
+{% extends "base.html" %}
 
-            </ul>
-
-            <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
-                <button class="btn btn-log btn-md" type="submit">Search</button>
-              </form>
-            <ul class="navbar-nav ml-auto">
-							{% if not request.user.is_authenticated %}
-                      <li><a class="nav-link" href="{% url 'accounts:signup' %}">Sign Up</a></li>
-                      <li><a class="nav-link" href="{% url 'accounts:signin' %}">Login</a></li>
-							{% endif %}
-							{% if request.user.is_authenticated %}
-							<li><a class="nav-link" href="{% url 'accounts:profile' %}">Profile</a></li>
-							<li><a class="nav-link" href="{% url 'accounts:signout' %}">Logout</a></li>
-							{% endif %}
-            </ul>
-        </div>
-    </div>
-    </nav>
-
+{% block content %}
 <!--- Image Slider -->
 <div id="slides" class="carousel slide" data-ride="carousel" style = "height:20%">
     <ul class="carousel-indicators">
@@ -224,43 +173,4 @@
     </div>
     </div>
 
-<!--- Footer -->
-<footer>
-<div class="container-fluid padding">
-    <div class="row text-center">
-    <div class="col-md-4">
-        <img src="https://scontent-cai1-1.xx.fbcdn.net/v/t1.15752-9/46631803_198910884352825_9199939240748646400_n.png?_nc_cat=102&_nc_ht=scontent-cai1-1.xx&oh=2d41c3db247d0376e9045c552ecfba23&oe=5CB25234" hight=2 width=130>
-        <hr class="light">
-        <p>5555-5555</p>
-        <p>email@hospital.com</p>
-        <p>100 Street Name</p>
-        <p>City,Country,00000</p>
-        </div>
-    <div class="col-md-4">
-        <hr class="light">
-        <h5>Our branches</h5>
-        <hr class="light">
-        <p>.......</p>
-        <p>.......</p>
-        <p>.......</p>
-        <p>.......</p>
-        </div>
-    <div class="col-md-4">
-        <hr class="light">
-        <h5>Our Services</h5>
-        <hr class="light">
-        <p>.......</p>
-        <p>.......</p>
-        <p>.......</p>
-        <p>.......</p>
-        </div>
-    <div class="col-12">
-        <hr class="light">
-        <h5>&copy; solomon.com</h5>
-        </div>
-    </div>
-    </div>
-</footer>
-
-</body>
-</html>
+{% endblock content %}

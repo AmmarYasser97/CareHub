@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+  <div class = "jumbotron" style = "background:transparent">
+    <h1 style = "color:#37c1cc;" align = "center"> Staff </h1>
+  </div>
+
+  <div class="row">
+    {% for doctor in doctors%}
+    {% if doctor.availability %}
+  <div class="col-lg-4" align = "center">
+    <a href = "#">
+    <img class = "img-circle image" src ="{{doctor.image}}" width = "180" height = "180" >
+    </a>	
+	<h3 style = "color:#23797f;"> Dr. {{doctor.name}} </h3>
+	<h4 style = "color:#37c1cc;"> {{doctor.expertise}} </h4>
+  </div>
+    {% endif %}
+   {% endfor %}
+</div>
+
+{% endblock content %}
