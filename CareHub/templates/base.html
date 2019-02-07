@@ -9,11 +9,84 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-	<link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <!--style na zwdto nb2a n7oto fe static 3san msh 3aref a7oto 3san kan mafrod en kol template leeh app w leha static w da fe project nfso-->
+    <style type="text/css">
+          /*===========Navigation===========*/
+.navbar
+{
+  background-color: transparent;
+  border-color: #444;
+  z-index: 110;
+  transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  -webkit-transition: all 1s;
+}
+ .navbar-nav > li > a
+{
+    color:#B5B5B5;
+    font-family: "Raleway",sans-serif;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -webkit-transition: all 1s;
+
+}
+ .navbar-nav > li > a:hover
+{
+    color:#129CF3;
+}
+ .navbar-nav > li > a:focus
+{
+    color:#B5B5B5;
+}
+.navbar-brand
+{
+    padding: 9px 15px;
+}
+.navbar-brand img
+{
+    transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -webkit-transition: all 1s;
+
+}
+ .navbar-nav > .active>a,
+ .navbar-nav > .active>a:hove,
+ .navbar-nav > .active>a:focus
+{
+    background-color: transparent;
+    color: #129CF3;
+}
+
+.footer
+{
+    background-color: #1a1a1a;
+    padding-bottom: 35px;
+    padding-top: 35px;
+    border-bottom: 3px solid #129cf3;
+    color: #129CF3;
+}
+#copyright
+{
+    width: 50%;
+}
+#copyright p
+{
+    color:#8c888a;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+
+}
+    </style>
+ 
 </head>
 
 <body>
-<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top navbar-nav">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"><img style = "vertical-align:center" src="/static/carehub.png" hight=2 width=130></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -21,10 +94,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav nav">
-            <li class="nav-item active"><a class="nav-link active" href="#">Home</a></li>
-            <li><a class="nav-link text-here" href="#">Clinics</a></li>
-            <li><a class="nav-link text-here" href="#">Scans</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Staff</a></li>
+            <li class="nav-item active"><a class="nav-link active" href="#">HOME</a></li>
+            <li><a class="nav-link text-here" href="#">CLINICS</a></li>
+            <li><a class="nav-link text-here" href="#">SCANS</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">STAFF</a></li>
             </ul>
             <!--<form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
@@ -32,8 +105,8 @@
               </form>-->
             <ul class="navbar-nav ml-auto">
 							{% if not request.user.is_authenticated %}
-                      <li><a class="nav-link" href="{% url 'accounts:signup' %}">Sign Up</a></li>
-                      <li><a class="nav-link" href="{% url 'accounts:signin' %}">Login</a></li>
+                      <li><a class="nav-link" href="{% url 'accounts:signup' %}">SIGN UP</a></li>
+                      <li><a class="nav-link" href="{% url 'accounts:signin' %}">LOGIN</a></li>
 							{% endif %}
 							{% if request.user.is_authenticated %}
 							<li><a class="nav-link" href="{% url 'accounts:profile' %}">Profile</a></li>
@@ -47,11 +120,11 @@
         {% block content %}{% endblock %}
 
 <!--- Footer -->
-<footer>
+<footer class="footer">
 <div class="container-fluid padding">
     <div class="row text-center">
     <div class="col-md-4">
-        <img src="https://scontent-cai1-1.xx.fbcdn.net/v/t1.15752-9/46631803_198910884352825_9199939240748646400_n.png?_nc_cat=102&_nc_ht=scontent-cai1-1.xx&oh=2d41c3db247d0376e9045c552ecfba23&oe=5CB25234" hight=2 width=130>
+        <img src="/static/carehub.png" hight=2 width=130>
         <hr class="light">
         <p>5555-5555</p>
         <p>email@hospital.com</p>
@@ -76,9 +149,9 @@
         <p>.......</p>
         <p>.......</p>
         </div>
-    <div class="col-12">
+    <div id="copyright" class="col-12">
         <hr class="light">
-        <h5>&copy; solomon.com</h5>
+        <p>&copy; solomon.com</p>
         </div>
     </div>
     </div>
