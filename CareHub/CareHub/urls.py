@@ -5,6 +5,7 @@ from . import views
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+app_name='CareHub'
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
@@ -12,6 +13,7 @@ urlpatterns = [
     path('staff/', include('Staff.urls')),
     path('clinics/', include('Clinics.urls')),
     path('scans/', include('Scans.urls')),
+    path('book/', include('reservations.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

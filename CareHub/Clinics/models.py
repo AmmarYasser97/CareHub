@@ -1,5 +1,6 @@
 from django.db import models
 from Staff.models import Doctor
+from django.urls import reverse
 
 '''
 NOTE:
@@ -12,7 +13,7 @@ class Service(models.Model):
     name = models.CharField(max_length=50)
     start_time = models.TimeField(auto_now=False, auto_now_add=False)
     end_time = models.TimeField(auto_now=False, auto_now_add=False)
-    no_appointments = models.PositiveSmallIntegerField()
+    no_appointments = models.PositiveSmallIntegerField(default=0)
     type = models.CharField(max_length=1)
     # type = 'C' for CLINIC or type = 'S' for SCAN
     doctors = models.ManyToManyField(Doctor)
@@ -20,3 +21,6 @@ class Service(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('staff-detail', kwargs={'pk': self.pk})
