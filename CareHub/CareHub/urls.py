@@ -13,7 +13,6 @@ urlpatterns = [
     path('staff/', include('Staff.urls')),
     path('clinics/', include('Clinics.urls')),
     path('scans/', include('Scans.urls')),
-    path('book/', include('reservations.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
