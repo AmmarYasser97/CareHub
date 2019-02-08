@@ -4,27 +4,9 @@
     <list default="true" id="7901ee0f-86fd-4e32-a47a-029beba43d71" name="Default Changelist" comment="Default Changelist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CareHub/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CareHub/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CareHub/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CareHub/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Clinics/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Clinics/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Clinics/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Clinics/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Clinics/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Clinics/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Clinics/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Clinics/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Clinics/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Clinics/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Staff/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Staff/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservations/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservations/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservations/forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservations/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservations/migrations/0002_auto_20190207_2157.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservations/migrations/0003_auto_20190207_2331.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservations/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservations/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservations/templates/book/book.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservations/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservations/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservations/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +34,35 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CareHub/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="119" column="20" lean-forward="true" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="15" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -79,8 +89,6 @@
         <option value="$PROJECT_DIR$/Staff/admin.py" />
         <option value="$PROJECT_DIR$/accounts/admin.py" />
         <option value="$PROJECT_DIR$/CareHub/views.py" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/Staff/templates/Staff/Staff.html" />
         <option value="$PROJECT_DIR$/Staff/templates/Staff/doctor_detail.html" />
         <option value="$PROJECT_DIR$/Scans/urls.py" />
@@ -105,9 +113,11 @@
         <option value="$PROJECT_DIR$/reservations/apps.py" />
         <option value="$PROJECT_DIR$/reservations/urls" />
         <option value="$PROJECT_DIR$/reservations/urls.py" />
-        <option value="$PROJECT_DIR$/CareHub/settings.py" />
         <option value="$PROJECT_DIR$/CareHub/urls.py" />
         <option value="$PROJECT_DIR$/Staff/models.py" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/CareHub/settings.py" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
       </list>
     </option>
   </component>
@@ -138,7 +148,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -146,10 +155,21 @@
               <item name="CareHub" type="b2602c69:ProjectViewProjectNode" />
               <item name="CareHub" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CareHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CareHub" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CareHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CareHub" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -160,13 +180,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\amarz\OneDrive\Desktop\SE2018G10\CareHub\static" />
+      <recent name="C:\Users\amarz\OneDrive\Desktop\SE2018G10\CareHub" />
+      <recent name="C:\Users\amarz\OneDrive\Desktop\SE2018G10\CareHub\Services" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\amarz\OneDrive\Desktop\SE2018G10\CareHub\Clinics" />
       <recent name="C:\Users\amarz\OneDrive\Desktop\SE2018G10\CareHub\Scans" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\amarz\OneDrive\Desktop\SE2018G10\CareHub" />
-      <recent name="C:\Users\amarz\OneDrive\Desktop\SE2018G10\CareHub\Services" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -197,17 +218,19 @@
       <option name="presentableId" value="Default" />
       <updated>1549399610044</updated>
       <workItem from="1549588659775" duration="5498000" />
+      <workItem from="1549665684335" duration="1756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5498000" />
+    <option name="totallyTimeSpent" value="7254000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="68" y="20" width="1400" height="776" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.30373135" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.30820894" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32919255" />
@@ -272,28 +295,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="175" column="22" lean-forward="true" selection-start-line="175" selection-start-column="22" selection-end-line="175" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Staff/templates/Staff/Staff.html" />
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CareHub/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Staff/templates/Staff/doctor_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -338,25 +340,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Staff/templates/Staff/doctor_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Staff/templates/Staff/doctor_confirm_delete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Staff/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -367,23 +350,8 @@
     <entry file="file://$PROJECT_DIR$/Staff/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/reservations/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="35" lean-forward="true" selection-start-line="3" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reservations/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/reservations/models.py" />
+    <entry file="file://$PROJECT_DIR$/reservations/forms.py" />
     <entry file="file://$PROJECT_DIR$/Clinics/templates/book/book.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -435,12 +403,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reservations/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reservations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/reservations/tests.py" />
+    <entry file="file://$PROJECT_DIR$/reservations/__init__.py" />
     <entry file="file://$PROJECT_DIR$/Scans/views.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -454,16 +418,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reservations/urls">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/reservations/urls" />
     <entry file="file://$PROJECT_DIR$/Clinics/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
@@ -474,33 +429,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reservations/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reservations/views.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reservations/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reservations/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CareHub/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="40" column="14" lean-forward="true" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/reservations/urls.py" />
+    <entry file="file://$PROJECT_DIR$/reservations/views.py" />
+    <entry file="file://$PROJECT_DIR$/reservations/admin.py" />
+    <entry file="file://$PROJECT_DIR$/reservations/apps.py" />
     <entry file="file://$PROJECT_DIR$/Staff/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -508,6 +440,53 @@
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Staff/templates/Staff/doctor_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="32" column="20" selection-start-line="32" selection-end-line="33" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Staff/templates/Staff/doctor_confirm_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CareHub/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CareHub/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="119" column="20" lean-forward="true" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
