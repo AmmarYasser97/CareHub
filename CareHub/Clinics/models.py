@@ -24,7 +24,7 @@ class Service(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('staff-detail', kwargs={'pk': self.pk})
+        return reverse('service-detail', kwargs={'pk': self.pk})
 
 
 class Reservation(models.Model):
@@ -32,6 +32,11 @@ class Reservation(models.Model):
     Doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
     Patient = models.ForeignKey(User, on_delete=models.CASCADE)
     Time = models.TimeField(auto_now=False, auto_now_add=False)
+    DateOfBook = models.DateField(auto_now_add=True)
+    
 
     def __str__(self):
         return self.Clinic.name
+
+    def get_absolute_url(self):
+        return reverse('service-list', kwargs={'pk': self.pk})

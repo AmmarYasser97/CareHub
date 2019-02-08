@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="jumbotron" style="background:transparent">
+        <h1 style="color:#37c1cc;" align="center"> Services </h1>
+    </div>
+
+    <div class="row">
+        {% for Service in Services%}
+        
+        <div class="card col-md-3 col-md-offset-1" style="width: 18rem;">
+            <img class=" rounded-circle card-img-top" src="/static/{{ service.image }}" alt="{{ service.name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ service.name }}</h5>
+            </div>
+            <a class="btn btn-info" href="{% url 'service-detail' service.id %}">More info about service</a>
+        </div>
+        
+        {% endfor %}
+    </div>
+
+    {% endblock content %}

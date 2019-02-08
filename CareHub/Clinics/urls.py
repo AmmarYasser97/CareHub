@@ -1,12 +1,16 @@
 from django.urls import path, include
 from django.conf.urls import url
+from .views import ServiceListView, ServiceDetailView, ServiceUpdateView,\
+    ServiceCreateView, ServiceDeleteView
 
 from . import views
 
-app_name = 'services'
 
 urlpatterns = [
-    url(r'^$', views.clinicslist, name='cl'),
-    url(r'^createService/$', views.create, name="create"),
+    path('', ServiceListView.as_view(), name='service-list'),
+    path('<int:pk>/', ServiceDetailView.as_view(), name='service-detail'),
+    path('<int:pk>/update', ServiceUpdateView.as_view(), name='service-update'),
+    path('add/', ServiceCreateView.as_view(), name='service-add'),
+    path('<int:pk>/delete', ServiceDeleteView.as_view(), name='service-delete'),
 
 ]
