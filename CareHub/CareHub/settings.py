@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'Staff',
     'Clinics',
     'Scans',
-    'reservations',
 ]
 
 MIDDLEWARE = [
@@ -121,5 +120,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'media'),
 )
+#added by me to suit media(k)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+#end of added....media(k) static==media
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
