@@ -8,6 +8,7 @@ from django.views.generic.edit import DeleteView
 
 class DoctorListView(ListView):
     model = Doctor
+    #template_name = 'Staff/doctor_list.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'doctors'
     ordering = ['name']
 
