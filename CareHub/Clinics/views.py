@@ -10,7 +10,6 @@ from .models import Service
 
 class ServiceListView(ListView):
     model = Service
-    #template_name = 'Staff/Service_list.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'Services'
     ordering = ['name']
 
