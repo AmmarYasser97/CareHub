@@ -14,6 +14,18 @@ class ServiceListView(ListView):
     ordering = ['name']
 
 
+class ClinicListView(ListView):
+    model = Service
+    context_object_name = 'Services'
+    ordering = ['name']
+    template_name='Clinics/clinic_list.html'
+
+class ScanListView(ListView):
+    model = Service
+    context_object_name = 'Services'
+    ordering = ['name']
+    template_name = 'Clinics/scan_list.html'
+
 class ServiceDetailView(DetailView):
     model = Service
 

@@ -4,11 +4,12 @@
 
 <div class="container-fluid">
     <div class="jumbotron" style="background:transparent">
-        <h1 style="color:#37c1cc;" align="center"> Services </h1>
+        <h1 style="color:#37c1cc;" align="center"> Scans </h1>
     </div>
 
     <div class="row">
         {% for service in Services%}
+        {% if service.type == 's' or service.type == 'S' %}
         <div class="card col-md-2 col-md-offset-1" style="width: 18rem;">
             <img class=" rounded-circle card-img-top" src="/static/{{ service.image }}" alt="{{ service.name }}">
             <div class="card-body">
@@ -17,6 +18,7 @@
             <a class="btn btn-info" href="{% url 'service-detail' service.id %}">More info about service</a>
 
         </div>
+        {%endif%}
         {% endfor %}
 
     </div>

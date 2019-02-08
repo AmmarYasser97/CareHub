@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^accounts/', include('accounts.urls')),
     path('staff/', include('Staff.urls')),
-    path('clinics/', include('Clinics.urls')),
+    path('services/', include('Clinics.urls')),
     path('scans/', include('Scans.urls')),
 ]
 

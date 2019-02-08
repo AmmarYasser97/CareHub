@@ -16,7 +16,7 @@ class Service(models.Model):
     end_time = models.TimeField(auto_now=False, auto_now_add=False)
     no_appointments = models.PositiveSmallIntegerField(default=0)
     type = models.CharField(max_length=1)
-    # type = 'C' for CLINIC or type = 'S' for SCAN
+    # type = 'C' for CLINIC or type = 'S' for SCAN 
     doctors = models.ManyToManyField(Doctor)
     availability = models.BooleanField(default=False)
 
