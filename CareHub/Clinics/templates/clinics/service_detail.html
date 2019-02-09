@@ -2,20 +2,27 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
+<br>
+<br>
 <div class="container">
     <div>
         <img class="img-circle image" src="/static/{{object.image}}" width="180" height="180">
+        <br>
+        <br>
         <h3 style="color:#23797f;"> Name: {{object.name}} </h3>
         <br>
         <h4 style="color:#37c1cc;">
-            Doctors: {{object.doctors}} </h4>
+            Doctors:
+            {% for doctor in object.doctors.all %}
+            <br>
+            {{doctor}}
+            {% endfor %}
+        </h4>
         <br>
-        <h5 style="color:#23797f;"> start_time: {{object.start_time}} </h5>
+        <h5 style="color:#23797f;"> Start Time: {{object.start_time}} </h5>
         <br>
-        <h5 style="color:#23797f;"> end_time: {{object.end_time}} </h5>
+        <h5 style="color:#23797f;"> End Time: {{object.end_time}} </h5>
         <br>
-        <h6 style="color:#37c1cc;">
-            Availability: {{object.availability}} </h6>
     </div>
     <a class="btn btn-danger" href="#">Delete</a>
     <a href="#" class="btn btn-info">Edit</a>

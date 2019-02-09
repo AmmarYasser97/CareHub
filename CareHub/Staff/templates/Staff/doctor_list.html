@@ -2,13 +2,13 @@
 
 {% block content %}
 
-<div class="container-fluid">
+<div class="container-fluid" style="padding: 0px">
   <div class = "jumbotron" style = "background:transparent">
     <h1 style = "color:#37c1cc;" align = "center"> Staff </h1>
   </div>
 
   <div class="row">
-    {% for doctor in doctors%}
+    {% for object in doctors%}
     {% if doctor.availability %}
 <div class="card col-md-3 col-md-offset-1" style="width: 18rem;">
   <img class=" rounded-circle card-img-top" src="/static/{{ doctor.image }}" alt="{{ doctor.name }}">
