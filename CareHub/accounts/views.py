@@ -4,7 +4,8 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .forms import RegisterForm, LoginForm
 from django.shortcuts import redirect
-
+from .models import Patient
+from .import forms
 def is_receptionist(user):
     return user.groups.filter(name='Receptionist').exists()
 
@@ -12,7 +13,43 @@ def Receptionist (request):
     return render(request, 'accounts/receptionist.html')
 
 def profile (request):
-    return render(request, 'accounts/profile.html')
+    username = None
+    if request.user.is_authenticated():
+        username = request.user
+    show = Patient.objects.get(this=username)
+    context = {
+        'name': show.name,
+        'age': show.age,
+        'blood': show.blood,
+        'weight': show.weight,
+        'height': show.height,
+        'emergency': show.Emergency,
+        'contact': show.contact,
+        'donor': show.Organ_Donor,
+        'Allergies': show.Allergies,
+        'meds': show.Meds,
+        'operations': show.Operation,
+        'history': show.History,
+        'smoker': show.Smoker,
+        'athletic': show.Athletic,
+        'email': show.email
+    }
+    return render(request, 'accounts/profile.html', context)
+
+def profile_edit(request):
+    if request.method == 'POST':
+        form = forms.ProfileEdit(request.POST, request.FILES)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.patient = request.user
+            instance.save()
+            return redirect('profile')
+        else:
+            form = forms.ProfileEdit()
+    else:
+        form = forms.ProfileEdit()
+    return render(request, 'accounts/Profile-edit.html', {'forms': form})
+
 
 def SignUp (request):
             # if this is a POST request we need to process the form data
