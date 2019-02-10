@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% block content%}
+  <div class = "jumbotron" style = "background:transparent">
+  <img class = "img-circle" src ="patient.jpg" width = "200" height = "200" >
+    <h2 style = "font family:Solomon; color:#37c1cc;"> {{ forms.name }} </h2>
+
+  <ul class="nav nav-tabs" style = "font family:Solomon; color:#37c1cc;">
+  <li class="active"><a data-toggle="tab" href="#home">Basic info</a></li>
+  <li><a data-toggle="tab" href="#menu1">Medical History</a></li>
+  <li><a data-toggle="tab" href="#menu2">Additional info</a></li>
+</ul>
+<form action="" method="post">
+    {% csrf_token %}
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <table class="table">
+	<tbody>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Age </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;">{{ forms.age }} </h4> </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Blood Type </h4> </td>
+        <td>
+
+		<select name="blood" style = "font family:Solomon; color:#23797f;">
+  <option value="A negative">A negative</option>
+  <option value="A postive">A postive</option>
+  <option value="B postive">B postive</option>
+  <option value="B negative">B negative</option>
+  <option value="B negative">O negative</option>
+  <option value="O postive">O Postive</option>
+  <option value="O negative">B negative</option>
+  <option value="AB negative">AB negative</option>
+  <option value="AB postive">AB postive</option>
+
+
+</select>
+ </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Weight </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;">{{ forms.weight }}</h4> </td>
+      </tr>
+	  <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Height </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ forms.height }} </h4> </td>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Emergency Contact </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ forms.Emergency }} </h4> </td>
+      </tr>
+
+	  </tr>
+
+    </tbody>
+
+
+	</table>
+
+  </div>
+  <div id="menu1" class="tab-pane fade">
+
+	<table class="table">
+	<tbody>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Allergies </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ forms.Allergies }} </h4> </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Organ Donor </h4> </td>
+        <td>
+		<div class="radio" style = "font family:Solomon; color:#23797f;">
+  <label><input type="radio" PLACEHOLDER="Organ_Donor" value="YES" checked>YES</label>
+</div>
+<div class="radio" style = "font family:Solomon; color:#23797f;">
+  <label><input type="radio" name="optradio" placeholder="Organ_Donor" value="NO">NO</label>
+</div>
+ </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Medications </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ forms.Meds }} </h4> </td>
+      </tr>
+	  <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Past operations </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;">{{ forms.Operation }}</h4> </td>
+		</tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Family History </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ forms.History }} </h4> </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Reports </h4> </td>
+        <td>
+
+                Select a file: <input type="file" name="myFile"><br><br>
+
+
+	     </td>
+      </tr>
+
+
+
+    </tbody>
+
+
+	</table>
+
+  </div>
+  <div id="menu2" class="tab-pane fade">
+
+    <table class="table">
+	<tbody>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;">Athletic</h4> </td>
+        <td>
+		<div class="radio" style = "font family:Solomon; color:#23797f;">
+  <label><input type="radio" name="optradio" value="YES" placeholder="Athletic" checked>YES</label>
+
+  <label><input type="radio" name="optradio" value="NO" placeholder="Athletic">NO</label>
+        </div>
+       </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Smoker </h4> </td>
+        <td>
+		<div class="radio" style = "font family:Solomon; color:#23797f;">
+  <label><input type="radio" name="optradio" value="YES" placeholder="Smoker" checked>YES</label>
+</div>
+<div class="radio" style = "font family:Solomon; color:#23797f;">
+  <label><input type="radio" name="optradio" value="NO" placeholder="Smoker">NO</label>
+</div>
+ </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Contact </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ forms.contact }}</h4> </td>
+      </tr>
+	  <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> E-mail </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> <input type="email" name="email" placeholder="email"> </h4> </td>
+		</tr>
+
+
+
+
+    </tbody>
+
+
+	</table>
+     <div class="button">
+      <input type="submit" value="Save">
+     </div>
+
+  </div>
+</div>
+    </form>
+  </div>
+
+
+
+  </br>
+
+  {% endblock %}
