@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% block%}
+  <div class = "jumbotron" style = "background:transparent">
+  <img class = "img-circle" src ="patient.jpg" width = "200" height = "200" >
+    <h2 style = "font family:Solomon; color:#37c1cc;"> {{ name }} </h2>
+
+  <ul class="nav nav-tabs" style = "font family:Solomon; color:#37c1cc;">
+  <li class="active"><a data-toggle="tab" href="#home">Basic info</a></li>
+  <li><a data-toggle="tab" href="#menu1">Medical History</a></li>
+  <li><a data-toggle="tab" href="#menu2">Additional info</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <table class="table">
+	<tbody>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Age </h4> </td>
+        <td>
+            <h4 style = "font family:Solomon; color:#23797f;">
+
+              {{ age }}
+            </h4>
+        </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Blood Type </h4> </td>
+        <td>
+		<h4 style = "font family:Solomon; color:#37c1cc;">{{ blood }}</h4>
+
+</select>
+ </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Weight </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ weight }} </h4> </td>
+      </tr>
+	  <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Height </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ height }} </h4> </td>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Emergency Contact </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ emergency }} </h4> </td>
+      </tr>
+
+	  </tr>
+
+    </tbody>
+
+
+	</table>
+
+  </div>
+  <div id="menu1" class="tab-pane fade">
+
+	<table class="table">
+	<tbody>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Allergies </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ Allergies }} </h4> </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Organ Donor </h4> </td>
+        <td>
+		<h4 style = "font family:Solomon; color:#37c1cc;">{{ donor }}</h4>
+ </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Medications </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;">{{ meds }}</h4> </td>
+      </tr>
+	  <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Past operations </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ operations }} </h4> </td>
+		</tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Family History </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ history }} </h4> </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Reports </h4> </td>
+        <td>
+		     <h4 style = "font family:Solomon; color:#37c1cc;">MyRecords.pdf</h4>
+	     </td>
+      </tr>
+
+
+
+    </tbody>
+
+
+	</table>
+
+  </div>
+  <div id="menu2" class="tab-pane fade">
+
+    <table class="table">
+	<tbody>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;">Athletic</h4> </td>
+        <td>
+		<h4 style = "font family:Solomon; color:#37c1cc;">{{ athletic }}</h4>
+ </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Smoker </h4> </td>
+        <td>
+		<h4 style = "font family:Solomon; color:#37c1cc;">{{ smoker }}</h4>
+ </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Contact </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ contact }}</h4> </td>
+      </tr>
+	  <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> E-mail </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ email }}</h4> </td>
+		</tr>
+
+
+
+
+    </tbody>
+
+
+	</table>
+
+
+  </div>
+</div>
+  </div>
+  <div class="button">
+  <button type="button"
+onclick='window.location.replace("edit");
+ '>
+Edit</button></div>
+  </br>
+{% endblock %}
