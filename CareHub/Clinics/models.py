@@ -29,8 +29,9 @@ class Service(models.Model):
 
 class Reservation(models.Model):
     Clinic = models.ForeignKey(Service, on_delete=models.CASCADE, default=None)
-    Doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
-    Patient = models.ForeignKey(User, on_delete=models.CASCADE)
+    Doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, default=None)
+    Booker = models.ForeignKey(User, on_delete=models.CASCADE)
+    Patient = models.CharField(max_length=50,default=str(Booker.name),)
     Time = models.TimeField(auto_now=False, auto_now_add=False)
     DateOfBook = models.DateField(auto_now_add=True)
     

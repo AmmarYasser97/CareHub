@@ -11,4 +11,10 @@ class CreateService(forms.ModelForm):
 class Book(forms.ModelForm):
     class Meta:
         model = models.Reservation
-        fields = ['Clinic', 'Doctor']
+        fields = ['Clinic', 'Doctor','Time']
+
+
+class BookR(forms.ModelForm):
+    class Meta:
+        model = models.Reservation
+        fields = ['Clinic', 'Doctor','Patient','Time']

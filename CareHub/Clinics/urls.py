@@ -14,5 +14,6 @@ urlpatterns = [
     path('<int:pk>/update', ServiceUpdateView.as_view(), name='service-update'),
     path('add/', ServiceCreateView.as_view(), name='service-add'),
     path('<int:pk>/delete', ServiceDeleteView.as_view(), name='service-delete'),
+    url(r'book/',views.book,name='book'),
 
 ]
