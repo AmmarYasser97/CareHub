@@ -4,8 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .forms import RegisterForm, LoginForm
 from django.shortcuts import redirect
-from .models import Patient
-from .import forms
+
 def is_receptionist(user):
     return user.groups.filter(name='Receptionist').exists()
 
@@ -14,7 +13,6 @@ def Receptionist (request):
 
 def profile (request):
     return render(request, 'accounts/profile.html')
-
 
 def SignUp (request):
             # if this is a POST request we need to process the form data
