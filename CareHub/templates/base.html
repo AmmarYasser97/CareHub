@@ -24,18 +24,18 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav nav">
             <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="{%url 'home'%}">Home</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Services</a>
                 <ul class="nav-item dropdown-menu">
-                  <li><a class="nav-link text-here" href="clinics.html">Clinics</a></li>
-                  <li><a class="nav-link text-here" href="Staff.html">Staff</a></li>
-                  <li><a class="nav-link text-here" href="scans.html">Scans</a></li>
+                  <li><a class="nav-link text-here" href="{%url 'clinic-list'%}">Clinics</a></li>
+                  <li><a class="nav-link text-here" href="{%url 'staff-list'%}">Staff</a></li>
+                  <li><a class="nav-link text-here" href="{%url 'scan-list'%}">Scans</a></li>
                 </ul>
               </li>
             <li class="nav-item">
-            <a class="nav-link" href="profile.html">Profile</a>
+            <a class="nav-link" href="accounts/">Profile</a>
             </li>
             </ul>
             <form class="form-inline">
@@ -43,8 +43,8 @@
                 <button class="btn btn-outline-light btn-log btn-md" type="submit">Search</button>
               </form>
             <ul class="navbar-nav ml-auto">
-                      <li><a class="nav-link" href="signUP.html">Sign Up</a></li>
-                      <li><a class="nav-link" href="signIN.html">Login</a></li>
+                      <li><a class="nav-link" href="accounts/signup">Sign Up</a></li>
+                      <li><a class="nav-link" href="accounts/signin">Login</a></li>
             </ul>
         </div>
     </div>
