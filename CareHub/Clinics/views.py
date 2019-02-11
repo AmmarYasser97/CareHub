@@ -61,6 +61,7 @@ def book(request):
             if form.is_valid():
                 x = form.save(commit=False)
                 x.Booker = request.user
+                
                 x.save()
                 return redirect('service-list')
 
@@ -76,6 +77,7 @@ def book(request):
                     if form.is_valid():
                         x = form.save(commit=False)
                         x.Booker = request.user
+                        x.Patient = str(request.user.get_username())
                         x.save()
                         return redirect('service-list')
 
