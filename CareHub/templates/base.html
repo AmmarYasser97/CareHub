@@ -1,27 +1,23 @@
-{% load static %}
+﻿{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>SOLOMON | Welcome</title>
+	<title> Welcome</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-
-	<link href="{% static "css/style.css" %}" rel="stylesheet">
-     <link href="{% static "css/animate.css" %}" rel="stylesheet">
-
-
+	<link href="/static/style.css" rel="stylesheet">
 </head>
 <body>
 	<!--- navigation bar -->
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"><img src="https://raw.githubusercontent.com/ganzourii/SE2018G10/master/CareHub/media/carehubwhite.png" hight=2 width=130></a>
+        <a class="navbar-brand" href="{%url 'home'%}"><img src="https://raw.githubusercontent.com/ganzourii/SE2018G10/master/CareHub/media/carehubwhite.png" hight=2 width=130></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -38,17 +34,18 @@
                   <li><a class="nav-link text-here" href="{%url 'scan-list'%}">Scans</a></li>
                 </ul>
               </li>
-            <li class="nav-item">
-            <a class="nav-link" href="accounts/">Profile</a>
-            </li>
+           
             </ul>
-            <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
-                <button class="btn btn-outline-light btn-log btn-md" type="submit">Search</button>
-              </form>
-            <ul class="navbar-nav ml-auto">
-                      <li><a class="nav-link" href="accounts/signup">Sign Up</a></li>
-                      <li><a class="nav-link" href="accounts/signin">Login</a></li>
+           
+            <ul class="navbar-nav ml-auto">                
+                {% if not request.user.is_authenticated %}
+                <li><a class="nav-link" href="{% url 'accounts:signup' %}">Sign Up</a></li>
+                <li><a class="nav-link" href="{% url 'accounts:signin' %}">Login</a></li>
+                {% endif %}
+                {% if request.user.is_authenticated %}
+                <li><a class="nav-link" href="{% url 'accounts:profile' %}">Profile</a></li>
+                <li><a class="nav-link" href="{% url 'accounts:signout' %}">Logout</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>
@@ -62,54 +59,38 @@
 <div class="container-fluid padding">
     <div class="row text-center">
     <div class="col-md-4">
-        <img class="wow fadeInLeft" src="https://raw.githubusercontent.com/ganzourii/SE2018G10/master/CareHub/media/carehubwhite.png" hight=3 width=130>
-        <hr class="light wow fadeInLeft">
-        <p class="wow fadeInLeft">5555-5555</p>
-        <p class="wow fadeInLeft">email@hospital.com</p>
-        <p class="wow fadeInLeft">100 Street Name</p>
-        <p class="wow fadeInLeft">City,Country,00000</p>
+        <img src="https://raw.githubusercontent.com/ganzourii/SE2018G10/master/CareHub/media/carehubwhite.png" hight=3 width=130>
+        <hr class="light">
+        <p>5555-5555</p>
+        <p>email@hospital.com</p>
+        <p>100 Street Name</p>
+        <p>City,Country,00000</p>
         </div>
     <div class="col-md-4">
-        <hr class="light wow fadeInLeft">
-        <h5 class="wow fadeInLeft">Our branches</h5>
-        <hr class="light wow fadeInLeft">
-        <p class="wow fadeInLeft">.......</p>
-        <p class="wow fadeInLeft">.......</p>
-        <p class="wow fadeInLeft">.......</p>
-        <p class="wow fadeInLeft">.......</p>
+        <hr class="light">
+        <h5>Our branches</h5>
+        <hr class="light">
+        <p>.......</p>
+        <p>.......</p>
+        <p>.......</p>
+        <p>.......</p>
         </div>
     <div class="col-md-4">
-        <hr class="light wow fadeInLeft">
-        <h5 class="wow fadeInLeft">Our Services</h5>
-        <hr class="light wow fadeInLeft">
-        <p class="wow fadeInLeft">.......</p>
-        <p class="wow fadeInLeft">.......</p>
-        <p class="wow fadeInLeft">.......</p>
-        <p class="wow fadeInLeft">.......</p>
+        <hr class="light">
+        <h5>Our Services</h5>
+        <hr class="light">
+        <p>.......</p>
+        <p>.......</p>
+        <p>.......</p>
+        <p>.......</p>
         </div>
-    <div class="col-12 wow fadeInLeft">
-        <hr class="light wow fadeInLeft">
-        <h5 class="wow fadeInLeft">&copy; solomon.com</h5>
+    <div class="col-12">
+        <hr class="light">
+        <h5>&copy; ainshams.com</h5>
         </div>
     </div>
     </div>    
 </footer>
-<!-- JS -->
-            <!-- Bootstrap JavaScript -->
-        <script src="{% static 'js/jquery.js' %}"></script>
-        <script src="{% static 'js/bootstrap.min.js' %}"></script>
-        
-        <!-- Bx Slider JS -->
-        <script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
-        
-        <!-- Add JS counter lib -->
-        <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
-        <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
-        
-        <!-- Add wow js lib -->
-        <script src="{% static 'js/wow.min.js' %}"></script>
-      
-        <!-- Custom Js -->
-        <script src="{% static 'js/custom.js' %}"></script>
+
 </body>
 </html>
