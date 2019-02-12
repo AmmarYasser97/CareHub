@@ -1,105 +1,144 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 
 
-    <head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Sign in</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="/static/style.css" rel="stylesheet">
+    <style>
+        .navbar-custom {
+            color: #FFFFFF;
+            background-color: #37c1cc;
+        }
 
-        <title>Sign in to CareHub</title>
-		<meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-
-
-		<!-- CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-    </head>
-	    <style>
-    .navbar-custom {
-    color: #FFFFFF;
-    background-color: #37c1cc;
-}
-        .font-here{
+        .font-here {
             color: #FFFFFF;
         }
     </style>
-	<body>
+</head>
 
-        <nav class="navbar navbar-default navbar-custom">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="#"><img src="/static/carehubwhite.png" hight=2 width=130></a>
-            </div>
-            <ul class="nav navbar-nav">
-              <li><a style="color:white;" href="{% url 'home' %}">Home</a></li>
-              <li class="dropdown">
-                <a style="color:white;" class="dropdown-toggle" data-toggle="dropdown" href="#">Services
-                <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="clinics.html">Clinics</a></li>
-                  <li><a href="Staff.html">Staff</a></li>
-                  <li><a href="scans.html">Scans</a></li>
+  
+<body>
+    <!--- navigation bar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{%url 'home'%}"><img src="https://raw.githubusercontent.com/ganzourii/SE2018G10/master/CareHub/media/carehubwhite.png" hight=2 width=130></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{%url 'home'%}">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Services</a>
+                        <ul class="nav-item dropdown-menu">
+                            <li><a class="nav-link text-here" href="{%url 'clinic-list'%}">Clinics</a></li>
+                            <li><a class="nav-link text-here" href="{%url 'staff-list'%}">Staff</a></li>
+                            <li><a class="nav-link text-here" href="{%url 'scan-list'%}">Scans</a></li>
+                        </ul>
+                    </li>
+
                 </ul>
-              </li>
-              
-            </ul>
-               <form class="navbar-form navbar-left" action="/action_page.php">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                    <div class="input-group-btn">
-                      <button class="btn btn-default" type="submit">
-                        <i class="glyphicon glyphicon-search"></i>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              <ul class="nav navbar-nav navbar-right">
-                      <li><a style="color:white;" href="{% url 'accounts:signup' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              </ul>
-          </div>
-        </nav>
+
+                <ul class="navbar-nav ml-auto">
+                    {% if not request.user.is_authenticated %}
+                    <li><a class="nav-link" href="{% url 'accounts:signup' %}">Sign Up</a></li>
+                    {% endif %}
+                    {% if request.user.is_authenticated %}
+                    <li><a class="nav-link" href="{% url 'accounts:profile' %}">Profile</a></li>
+                    <li><a class="nav-link" href="{% url 'accounts:signout' %}">Logout</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+            
 
         <div class="container">
-        <h2 style = "font family:Solomon; color:#37c1cc;">Sign in to CareHub</h2>
-        <form action="{% url 'accounts:signin' %}" method = 'post'>
-        {% csrf_token %}
-        {% if error_message %}
-        <p class="bg-danger p-d ml-b">{{ error_message }}</p>
-        {% endif %}
+            <br />
+            <h2 style="font family:Solomon; color:#37c1cc;">Sign in to CareHub</h2>
+            <form action="{% url 'accounts:signin' %}" method='post'>
+                {% csrf_token %}
+                {% if error_message %}
+                <p class="bg-danger p-d ml-b">{{ error_message }}</p>
+                {% endif %}
 
-        <div class="form-group">
-        <label for="{{ form.username.id_for_label }}" style = "font family:Solomon; color:#23797f;">Username:</label>
-			  <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <div> {{form.username}} </div>
-				</div>
+                <div class="form-group">
+                    <label for="{{ form.username.id_for_label }}" style="font family:Solomon; color:#23797f;">Username:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <div> {{form.username}} </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="{{ form.password.id_for_label }}" style="font family:Solomon; color:#23797f;">Password:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <div> {{form.password}} </div>
+                    </div>
+                </div>
+
+             
+
+                <p style="font family:Solomon; color:#23797f;"> New to CareHub? <a href="{% url 'accounts:signup' %}">create a new account</a> </p>
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-info" role="button" value="submit">
+                </div>
+
+            </form>
         </div>
 
-        <div class="form-group">
-        <label for="{{ form.password.id_for_label }}" style = "font family:Solomon; color:#23797f;">Password:</label>
-			  <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-				<div> {{form.password}} </div>
-        </div>
-        </div>
+    <br />
 
-        <div class="checkbox">
-        <label style = "font family:Solomon; color:#23797f;"><input type="checkbox" name="remember"> Remember me</label>
+    <!--- Footer -->
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="https://raw.githubusercontent.com/ganzourii/SE2018G10/master/CareHub/media/carehubwhite.png" hight=3 width=130>
+                    <hr class="light">
+                    <p>5555-5555</p>
+                    <p>email@hospital.com</p>
+                    <p>100 Street Name</p>
+                    <p>City,Country,00000</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Our branches</h5>
+                    <hr class="light">
+                    <p>.......</p>
+                    <p>.......</p>
+                    <p>.......</p>
+                    <p>.......</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Our Services</h5>
+                    <hr class="light">
+                    <p>.......</p>
+                    <p>.......</p>
+                    <p>.......</p>
+                    <p>.......</p>
+                </div>
+                <div class="col-12">
+                    <hr class="light">
+                    <h5>&copy; ainshams.com</h5>
+                </div>
+            </div>
         </div>
+    </footer>
 
-	      <p style = "font family:Solomon; color:#23797f;"> New to CareHub? <a href="accounts:signup">create a new account</a> </p>
-
-        <div class="form-group">
-        <input type = "submit" class="btn btn-info" role="button" value = "submit">
-        </div>
-
-        </form>
-        </div>
-
-</body>
+    </body>
 </html>
