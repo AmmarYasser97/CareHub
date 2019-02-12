@@ -54,10 +54,10 @@ class ServiceDeleteView(DeleteView):
 @login_required(login_url="/accounts/signin/")
 def book(request):
 
-    if (Aviews.is_receptionist):
+    if (Aviews.is_receptionist(request.user)):
 
         if request.method == 'POST':
-            form = forms.Book(request.POST)
+            form = forms.BookR(request.POST)
             if form.is_valid():
                 x = form.save(commit=False)
                 x.Booker = request.user
@@ -73,14 +73,20 @@ def book(request):
     else:
 
         if request.method == 'POST':
-                    form = forms.Book(request.POST)
-                    if form.is_valid():
-                        x = form.save(commit=False)
-                        x.Booker = request.user
-                        x.Patient = str(request.user.get_username())
-                        x.save()
-                        return redirect('service-list')
-
+            form = forms.Book(request.POST)
+            if form.is_valid():
+                x = form.save(commit=False)
+                        #if request.POST["TOR"] < request.POST["Clinic"].start_time and request.POST["TOR"] > request.POST["Clinic"].end_time:
+                            #for slots in OpenSlots:
+                             #   if slots != request.POST["TOR"]:
+                                    
+                x.Booker = request.user
+                x.OpenSlots= request.POST["TOR"]
+                x.Day= request.POST["DOR"]
+                x.Patient = str(request.user.get_username())
+                x.save()
+                return redirect('service-list')
+                        
         else:
             form = forms.Book()
             return render(request, 'book/book.html', {'form': form})

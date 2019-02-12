@@ -7,16 +7,7 @@
         <form method="post" action="{% url 'book' %}">
             {% csrf_token %}
             {{form}}
-            <br>
-            <br>
-            <br>
-            <input type="time" name="TOR">
-            <br>
-            {{message}}
-            <br>
-            <input type="date" name="DOR" >
-            <br>
-            <br>
+            <input type="datetime" value="Time" >
             <input type="submit" value="create">
         </form>
     </div>

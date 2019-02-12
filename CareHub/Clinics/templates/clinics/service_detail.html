@@ -24,9 +24,18 @@
         <h5 style="color:#23797f;"> End Time: {{object.end_time}} </h5>
         <br>
     </div>
-    <a class="btn btn-danger" href="#">Delete</a>
-    <a href="#" class="btn btn-info">Edit</a>
+    {%if request.user.is_authenticated%}
+    <form action="post">
+        {% csrf_token %}
+        <input type="text" hidden value="{ object.name }" >
+        <input type="submit" class="btn btn-outline-primary" value="Book">  
+        
+
+
+    </form>
+     <a href="{%url 'book' %}" class="btn btn-info">Book</a>
     <br>
+    {%endif%}
     <br>
 </div>
 
