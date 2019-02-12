@@ -12,7 +12,7 @@ def patient(request):
     template = loader.get_template('patient.html')
     context = {
 
-        'Patient': Patient.objects.get(pk=1),
+        'Patient': Patient.objects.get(pk=3),
 
 
 
