@@ -6,7 +6,7 @@ from django.template import loader
 
 
 def patient(request):
-    template =loader.get_template(patient.html)
+    template = loader.get_template('patient.html')
     context = {
 
 

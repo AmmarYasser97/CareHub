@@ -16,11 +16,28 @@ class Patient(models.Model):
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image =  models.ImageField(default='defaultPatient.jpg',upload_to='patient_profile_pics')
+
+    # Basic Info
     Age = models.PositiveSmallIntegerField()
     Blood_Type =models.CharField(max_length=11,choices=Blood_Types, default= Ap)
     Weight =models.PositiveSmallIntegerField()
     Height =models.PositiveSmallIntegerField()
-    Emergency_Contact =models.BigIntegerField()
+    Contact =models.BigIntegerField()
+
+    #Medical History
+    Allergies = models.TextField()
+    Organ_Donor = models.BooleanField()
+    Medications = models.TextField()
+    Past_Operations = models.TextField()
+    Family_History = models.TextField()
+
+
+    # Additional Info
+    Athletic = models.BooleanField()
+    Smoker = models.BooleanField()
+
+
+
 
 def __str__(self):
         return f'{self.user.username} Patient'
