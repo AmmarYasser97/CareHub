@@ -17,6 +17,10 @@ class Patient(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image =  models.ImageField(default='defaultPatient.jpg',upload_to='patient_profile_pics')
 
+
+    # tkmlet User
+
+
     # Basic Info
     Age = models.PositiveSmallIntegerField()
     Blood_Type =models.CharField(max_length=11,choices=Blood_Types, default= Ap)
@@ -25,17 +29,16 @@ class Patient(models.Model):
     Contact =models.BigIntegerField()
 
     #Medical History
-    Allergies = models.TextField()
-    Organ_Donor = models.BooleanField()
-    Medications = models.TextField()
-    Past_Operations = models.TextField()
-    Family_History = models.TextField()
+    Allergies = models.TextField(default="None")
+    Organ_Donor = models.BooleanField(default=False)
+    Medications = models.TextField(default="None")
+    Past_Operations = models.TextField(default="None")
+    Family_History = models.TextField(default="None")
 
 
     # Additional Info
-    Athletic = models.BooleanField()
-    Smoker = models.BooleanField()
-
+    Athletic = models.BooleanField(default=False)
+    Smoker = models.BooleanField(default=False)
 
 
 

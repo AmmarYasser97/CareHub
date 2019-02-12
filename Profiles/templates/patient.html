@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>My Profile</title>
+  <title>{{ Patient.user.username }} - Profile</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -58,7 +58,7 @@
                   </div>
                 </form>
               <ul class="nav navbar-nav navbar-right">
-                      <li><a style="color:white;" href="#">profile</a></li>
+                      <li><a style="color:white;" href="#">{{ Patient.user.username }}</a></li>
                       <li><a style="color:white;" href=""><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
               </ul>
           </div>
@@ -66,51 +66,40 @@
 <div class="container-fluid">
 
   <div class = "jumbotron" style = "background:transparent">
-  <img class = "img-circle image" src ="patient.jpg" width = "200" height = "200" >
-    <h2 style = "font family:Solomon; color:#37c1cc;"> Patient 1 </h2>
+  <img class = "img-circle image" src ="" width = "200" height = "200" >
+    <h2 style = "font family:Solomon; color:#37c1cc;">{{ Patient.user.first_name }} {{ Patient.user.last_name }}</h2>
 
   <ul class="nav nav-tabs" style = "font family:Solomon; color:#37c1cc;">
   <li class="active"><a data-toggle="tab" href="#home">Basic info</a></li>
   <li><a data-toggle="tab" href="#menu1">Medical History</a></li>
   <li><a data-toggle="tab" href="#menu2">Additional info</a></li>
+  <li><a data-toggle="tab" href="#backlog">Backlog</a></li>
+
 </ul>
 
 <div class="tab-content">
+
   <div id="home" class="tab-pane fade in active">
     <table class="table">
 	<tbody>
       <tr>
         <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Age </h4> </td>
-        <td> <h4 style = "font family:Solomon; color:#23797f;"> 22 </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ Patient.Age }} </h4> </td>
       </tr>
       <tr>
         <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Blood Type </h4> </td>
-        <td>
-		<select name="bloodtype" style = "font family:Solomon; color:#23797f;">
-  <option value="A negative">A negative</option>
-  <option value="A postive">A postive</option>
-  <option value="B postive">B postive</option>
-  <option value="B negative">B negative</option>
-  <option value="B negative">O negative</option>
-  <option value="O postive">O Postive</option>
-  <option value="O negative">B negative</option>
-  <option value="AB negative">AB negative</option>
-  <option value="AB postive">AB postive</option>
-
-
-</select>
- </td>
+       <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ Patient.Blood_Type }} </h4> </td>
       </tr>
       <tr>
         <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Weight </h4> </td>
-        <td> <h4 style = "font family:Solomon; color:#23797f;"> 60 </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ Patient.Weight }} </h4> </td>
       </tr>
 	  <tr>
         <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Height </h4> </td>
-        <td> <h4 style = "font family:Solomon; color:#23797f;"> 160 </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ Patient.Height }} </h4> </td>
       <tr>
-        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Emergency Contact </h4> </td>
-        <td> <h4 style = "font family:Solomon; color:#23797f;"> 4839449 </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Contact </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> 0{{ Patient.Contact }} </h4> </td>
       </tr>
 
 	  </tr>
@@ -121,47 +110,32 @@
 	</table>
 
   </div>
+
+
   <div id="menu1" class="tab-pane fade">
 
 	<table class="table">
 	<tbody>
       <tr>
         <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Allergies </h4> </td>
-        <td> <h4 style = "font family:Solomon; color:#23797f;"> Nuts </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;">  {{Patient.Contact}} </h4> </td>
       </tr>
       <tr>
         <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Organ Donor </h4> </td>
-        <td>
-		<div class="radio" style = "font family:Solomon; color:#23797f;">
-  <label><input type="radio" name="optradio" checked>YES</label>
-</div>
-<div class="radio" style = "font family:Solomon; color:#23797f;">
-  <label><input type="radio" name="optradio">NO</label>
-</div>
- </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;">  {{Patient.Organ_Donor}} </h4> </td>
       </tr>
       <tr>
         <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Medications </h4> </td>
-        <td> <h4 style = "font family:Solomon; color:#23797f;"> None </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{Patient.Medications}} </h4> </td>
       </tr>
 	  <tr>
         <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Past operations </h4> </td>
-        <td> <h4 style = "font family:Solomon; color:#23797f;"> None </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{Patient.Past_Operations}} </h4> </td>
 		</tr>
       <tr>
         <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Family History </h4> </td>
-        <td> <h4 style = "font family:Solomon; color:#23797f;"> Diabetes </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{Patient.Family_History}} </h4> </td>
       </tr>
-      <tr>
-        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Reports </h4> </td>
-        <td>
-		     <form action="/action_page.php" style = "font family:Solomon; color:#23797f;">
-                Select a file: <input type="file" name="myFile"><br><br>
-                <input type="submit">
-             </form>
-	     </td>
-      </tr>
-
 
 
     </tbody>
@@ -176,33 +150,15 @@
 	<tbody>
       <tr>
         <td> <h4 style = "font family:Solomon; color:#37c1cc;">Athletic</h4> </td>
-        <td>
-		<div class="radio" style = "font family:Solomon; color:#23797f;">
-  <label><input type="radio" name="optradio" checked>YES</label>
-</div>
-<div class="radio" style = "font family:Solomon; color:#23797f;">
-  <label><input type="radio" name="optradio">NO</label>
-</div>
- </td>
+         <td> <h4 style = "font family:Solomon; color:#23797f;"> {{Patient.Athletic}} </h4> </td>
       </tr>
       <tr>
         <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Smoker </h4> </td>
-        <td>
-		<div class="radio" style = "font family:Solomon; color:#23797f;">
-  <label><input type="radio" name="optradio" checked>YES</label>
-</div>
-<div class="radio" style = "font family:Solomon; color:#23797f;">
-  <label><input type="radio" name="optradio">NO</label>
-</div>
- </td>
-      </tr>
-      <tr>
-        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Contact </h4> </td>
-        <td> <h4 style = "font family:Solomon; color:#23797f;"> 38473674</h4> </td>
+         <td> <h4 style = "font family:Solomon; color:#23797f;"> {{Patient.Smoker}} </h4> </td>
       </tr>
 	  <tr>
         <td> <h4 style = "font family:Solomon; color:#37c1cc;"> E-mail </h4> </td>
-        <td> <h4 style = "font family:Solomon; color:#23797f;"> patient@gmail.com </h4> </td>
+         <td> <h4 style = "font family:Solomon; color:#23797f;"> {{Patient.user.email}} </h4> </td>
 		</tr>
 
 
@@ -215,6 +171,29 @@
 
 
   </div>
+
+     <div id="backlog" class="tab-pane fade">
+
+    <table class="table">
+	<tbody>
+      <tr>
+            <td> <h4 style = "font family:Solomon; color:#37c1cc;">Clinic</h4> </td>
+            <td> <h4 style = "font family:Solomon; color:#23797f;">Doctor</h4> </td>
+            <td> <h4 style = "font family:Solomon; color:#23797f;">Time</h4> </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;">DUMMY</h4> </td>
+          <td> <h4 style = "font family:Solomon; color:#23797f;">DUMMY</h4> </td>
+          <td> <h4 style = "font family:Solomon; color:#23797f;">DUMMY</h4> </td>
+      </tr>
+
+    </tbody>
+	</table>
+
+
+  </div>
+
+
 </div>
   </div>
 
