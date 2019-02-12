@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ad9f4e1d-34e1-45a1-a90b-a707020fa962" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile_App/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Profile_App/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profile_App/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Profile_App/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profiles/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Profiles/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profiles/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Profiles/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient_profile_pics/DTBHMabWsAARtxF.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/patient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profile_App/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Profile_App/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/defaultPatient.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/patient_profile_pics/defaultPatient.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/patient-update" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Profile_App/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="17" column="71" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
+            <state relative-caret-position="289">
+              <caret line="17" column="76" selection-start-line="17" selection-start-column="76" selection-end-line="17" selection-end-column="76" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -79,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/patient.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="68" column="56" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
+            <state relative-caret-position="255">
+              <caret line="64" column="14" lean-forward="true" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#h4#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h4#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -93,7 +89,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Profile_App/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -121,11 +117,11 @@
         <option value="$PROJECT_DIR$/Profile_App/admin.py" />
         <option value="$PROJECT_DIR$/templates/patient-update" />
         <option value="$PROJECT_DIR$/Profile_App/urls.py" />
-        <option value="$PROJECT_DIR$/templates/patient.html" />
         <option value="$PROJECT_DIR$/Profiles/urls.py" />
         <option value="$PROJECT_DIR$/Profiles/settings.py" />
-        <option value="$PROJECT_DIR$/Profile_App/models.py" />
         <option value="$PROJECT_DIR$/Profile_App/views.py" />
+        <option value="$PROJECT_DIR$/templates/patient.html" />
+        <option value="$PROJECT_DIR$/Profile_App/models.py" />
       </list>
     </option>
   </component>
@@ -148,6 +144,17 @@
             <path>
               <item name="Profiles" type="b2602c69:ProjectViewProjectNode" />
               <item name="Profiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Profiles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Profiles" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Profiles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Profiles" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+              <item name="patient_profile_pics" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Profiles" type="b2602c69:ProjectViewProjectNode" />
@@ -183,6 +190,9 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hp\Documents\GitHub\SE2018G10\Profiles\media\patient_profile_pics" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\hp\Documents\GitHub\SE2018G10\Profiles\Profile_App" />
     </key>
@@ -238,17 +248,18 @@
       <workItem from="1549836874519" duration="2185000" />
       <workItem from="1549839615938" duration="2101000" />
       <workItem from="1549842872878" duration="279000" />
-      <workItem from="1549915593855" duration="12274000" />
+      <workItem from="1549915593855" duration="14866000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16839000" />
+    <option name="totallyTimeSpent" value="19431000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2596401" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2596401" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -327,31 +338,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Profile_App/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="17" column="71" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/patient.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="68" column="56" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
-          <folding>
-            <element signature="n#style#0;n#h4#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#td#1;n#tr#1;n#tbody#0;n#table#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#td#2;n#tr#1;n#tbody#0;n#table#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Profiles/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
@@ -372,6 +358,31 @@
           <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/patient.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="64" column="14" lean-forward="true" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#h4#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#td#1;n#tr#1;n#tbody#0;n#table#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#td#2;n#tr#1;n#tbody#0;n#table#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Profile_App/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="76" selection-start-line="17" selection-start-column="76" selection-end-line="17" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
