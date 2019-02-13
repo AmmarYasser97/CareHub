@@ -35,4 +35,4 @@ def profile_edit(request):
             form = forms.ProfileEdit()
     else:
         form = forms.ProfileEdit()
-    return render(request, 'Update_profile.html', {'forms': form})
+    return render(request, 'patient-update.html', {'forms': form})
