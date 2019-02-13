@@ -78,86 +78,82 @@
             <tbody>
               <tr>
                 <td>Username</td>
-                <td>{{Patient.User.username}}</td>
+                <td>{{Patient.user.username}}</td>
               </tr>
               <tr>
                 <td>First Name</td>
-                <td><input type="text" name="FirstName"></td>
+                <td><input type="text" name="FirstName" value="{{ Patient.user.first_name }}"></td>
               </tr>
               <tr>
                 <td>Last Name</td>
-                <td> <input type="text" name="LastName"></td>
+                <td> <input type="text" name="LastName" value="{{ Patient.user.last_name }}"></td>
               </tr>
               <tr>
                 <td>Email</td>
-                <td><input type="email" name="Email"></td>
-              </tr>
-              <tr>
-                <td>Current Password</td>
-                <td><input type="password" name="CurrentPassword"></td>
+                <td><input type="email" name="Email"value="{{ Patient.user.email }}"></td>
               </tr>
               <tr>
                 <td>New Password</td>
-                <td><input type="password" name="NewPassword"></td>
+                <td><input type="password" name="Password"></td>
               </tr>
               <tr>
                 <td>Age</td>
-                <td><input type="number" name="Age"></td>
+                <td><input type="number" name="Age" value="{{ Patient.Age }}"></td>
               </tr>
 
               <tr>
                 <td>Blood Type</td>
-                <td><select name="BloodType">
-                    <option value="A+">A+</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B-">B-</option>
-                    <option value="O+">O+</option>
-                    <option value="O-">O-</option>
-                    <option value="AB+">AB+</option>
-                    <option value="AB-">AB-</option>
+                <td><select name="BloodType" selected="{{ Patient.Blood_Type }}">
+                    <option value="A+" {% if Patient.Blood_Type == "A Positive" %} selected {% endif %}>A+</option>
+                    <option value="A-" {% if Patient.Blood_Type == "A Negative" %} selected {% endif %}>A-</option>
+                    <option value="B+" {% if Patient.Blood_Type == "B Positive" %} selected {% endif %}>B+</option>
+                    <option value="B-" {% if Patient.Blood_Type == "B Negative" %} selected {% endif %}>B-</option>
+                    <option value="O+" {% if Patient.Blood_Type == "O Positive" %} selected {% endif %}>O+</option>
+                    <option value="O-" {% if Patient.Blood_Type == "O Negative" %} selected {% endif %}>O-</option>
+                    <option value="AB+" {% if Patient.Blood_Type == "AB Positive" %} selected {% endif %}>AB+</option>
+                    <option value="AB-" {% if Patient.Blood_Type == "AB Negative" %} selected {% endif %}>AB-</option>
                   </select></td>
               </tr>
 
               <tr>
                 <td>Weight</td>
-                <td><input type="number" name="Weight"></td>
+                <td><input type="number" name="Weight" value="{{ Patient.Weight }}"></td>
               </tr>
               <tr>
                 <td>Height</td>
-                <td><input type="number" name="Height"></td>
+                <td><input type="number" name="Height" value="{{ Patient.Height }}"></td>
               </tr>
               <tr>
                 <td>Contact</td>
-                <td><input type="number" name="Contact"></td>
+                <td><input type="number" name="Contact" value="{{ Patient.Contact }}"></td>
               </tr>
               <tr>
                 <td>Allergies</td>
-                <td><textarea name="Allergies"></textarea></td>
+                <td><textarea name="Allergies">{{ Patient.Allergies}}</textarea></td>
               </tr>
               <tr>
                 <td>Organ Donor</td>
-                <td><input type="checkbox" name="OrganDonor"></td>
+                <td><input type="checkbox" name="OrganDonor" {% if Patient.Organ_Donor == True %} checked {% endif %}></td>
               </tr>
               <tr>
                 <td>Medications</td>
-                <td><textarea name="Medications"></textarea></td>
+                <td><textarea name="Medications">{{ Patient.Medications }}</textarea></td>
               </tr>
               <tr>
                 <td>Past Operations</td>
-                <td><textarea name="PastOperations"></textarea></td>
+                <td><textarea name="PastOperations">{{ Patient.Past_Operations }}</textarea></td>
               </tr>
               <tr>
                 <td>Family History</td>
-                <td><textarea name="FamilyHistory"></textarea></td>
+                <td><textarea name="FamilyHistory">{{ Patient.Family_History }}</textarea></td>
               </tr>
               <tr>
                 <td>Athletic</td>
-                <td><input type="checkbox" name="Athletic"></td>
+                <td><input type="checkbox" name="Athletic" {% if Patient.Athletic == True %} checked {% endif %} ></td>
               </tr>
               <tr>
                 <td>Smoker</td>
-                <td><input type="checkbox" name="Smoker"></td>
+                <td><input type="checkbox" name="Smoker" {% if Patient.Smoker == True %} checked {% endif %}></td>
               </tr>
 
 

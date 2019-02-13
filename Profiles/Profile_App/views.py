@@ -20,6 +20,18 @@ def patient(request):
     }
     return HttpResponse(template.render(context, request))
 
+def patient_update(request):
+    template = loader.get_template('patient-update.html')
+    context = {
+
+        'Patient': Patient.objects.get(pk=3),
+
+
+
+
+    }
+    return HttpResponse(template.render(context, request))
+
 
 # to save edit profile data in database
 

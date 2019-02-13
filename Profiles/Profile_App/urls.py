@@ -23,6 +23,7 @@ from Profile_App import views
 
 urlpatterns = [
     url('^$', views.patient, name='patient'),
+    url(r'^patient_update/', views.patient_update, name='patient_update'),
 
 
 ]
