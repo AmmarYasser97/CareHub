@@ -72,7 +72,8 @@
       </ul>
 
 
-      <form action="#">
+      <form class="patient_update_form" method="POST" action="/patient_update_form/">
+      {% csrf_token %}
         <div id="Update" class="tab-pane fade in active">
           <table class="table">
             <tbody>
