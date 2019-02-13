@@ -60,11 +60,25 @@ def book(request):
             form = forms.BookR(request.POST)
             if form.is_valid():
                 x = form.save(commit=False)
-                x.Booker = request.user
                 
-                x.save()
-                return redirect('service-list')
+                if request.POST["TOR"] > str(x.Clinic.start_time) and request.POST["TOR"] < str(x.Clinic.end_time):
+                    if Reservation.rManager.filter(Day=request.POST['DOR']).exists():
+                        if Reservation.rManager.filter(Time=request.POST['TOR']).exists():
+                            form = forms.BookR()
+                            message = 'please choose another'
+                            return render(request, 'book/book.html', {'form': form, 'message': message})
+                else:
+                
+                    x.Booker = request.user
+                    x.save()
+                    return redirect('service-list')
 
+            else:
+                    form = forms.BookR()
+                    message = 'please choose between interval'
+                    return render(request, 'book/book.html', {'form': form, 'message': message})
+        
+        
         else:
             form = forms.BookR()
             return render(request, 'book/book.html', {'form': form})
@@ -76,13 +90,13 @@ def book(request):
             form = forms.Book(request.POST)
             if form.is_valid():
                 x = form.save(commit=False)
-                if request.POST["TOR"] > str(x.Clinic.start_time) and request.POST["TOR"] < str(x.Clinic.end_time) :                           #for slots in OpenSlots:
-                            # this condition to check wether this time is already taken but not completed
-                    
-                    if Reservation.rManager.filter(Time=form.cleaned_data['TOR']).exists():
-                        form = forms.Book()
-                        message = 'please choose another'
-                        return render(request, 'book/book.html', {'form': form, 'message': message})
+                if request.POST["TOR"] > str(x.Clinic.start_time) and request.POST["TOR"] < str(x.Clinic.end_time) :                           
+                            
+                    if Reservation.rManager.filter(Day=request.POST['DOR']).exists():
+                        if Reservation.rManager.filter(Time=request.POST['TOR']).exists():
+                            form = forms.Book()
+                            message = 'please choose another'
+                            return render(request, 'book/book.html', {'form': form, 'message': message})
                     else:
                         
                         x.Booker = request.user
