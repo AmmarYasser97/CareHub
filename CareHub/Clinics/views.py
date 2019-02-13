@@ -76,16 +76,20 @@ def book(request):
             form = forms.Book(request.POST)
             if form.is_valid():
                 x = form.save(commit=False)
-                        #if request.POST["TOR"] < request.POST["Clinic"].start_time and request.POST["TOR"] > request.POST["Clinic"].end_time:
-                            #for slots in OpenSlots:
+                if request.POST["TOR"] > str(x.Clinic.start_time) and request.POST["TOR"] < str(x.Clinic.end_time) :                           #for slots in OpenSlots:
+                            # this condition to check wether this time is already taken but not completed
                              #   if slots != request.POST["TOR"]:
                                     
-                x.Booker = request.user
-                x.OpenSlots= request.POST["TOR"]
-                x.Day= request.POST["DOR"]
-                x.Patient = str(request.user.get_username())
-                x.save()
-                return redirect('service-list')
+                    x.Booker = request.user
+                    x.Time= request.POST["TOR"]
+                    x.Day= request.POST["DOR"]
+                    x.Patient = str(request.user.get_username())
+                    x.save()
+                    return redirect('service-list')
+                else:
+                    form = forms.Book()
+                    message= 'please choose between interval'
+                    return render(request, 'book/book.html', {'form': form, 'message':message})
                         
         else:
             form = forms.Book()
