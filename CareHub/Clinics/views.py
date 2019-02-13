@@ -5,7 +5,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
 from django.views.generic.edit import UpdateView
 from django.views.generic.edit import DeleteView
-from .models import Service
+from .models import Service, Reservation
 from django.contrib.auth.models import User, Group
 from accounts import views as Aviews
 from django.contrib.auth.decorators import login_required
@@ -78,18 +78,23 @@ def book(request):
                 x = form.save(commit=False)
                 if request.POST["TOR"] > str(x.Clinic.start_time) and request.POST["TOR"] < str(x.Clinic.end_time) :                           #for slots in OpenSlots:
                             # this condition to check wether this time is already taken but not completed
-                             #   if slots != request.POST["TOR"]:
-                                    
-                    x.Booker = request.user
-                    x.Time= request.POST["TOR"]
-                    x.Day= request.POST["DOR"]
-                    x.Patient = str(request.user.get_username())
-                    x.save()
-                    return redirect('service-list')
+                    
+                    if Reservation.rManager.filter(Time=form.cleaned_data['TOR']).exists():
+                        form = forms.Book()
+                        message = 'please choose another'
+                        return render(request, 'book/book.html', {'form': form, 'message': message})
+                    else:
+                        
+                        x.Booker = request.user
+                        x.Time= request.POST["TOR"]
+                        x.Day= request.POST["DOR"]
+                        x.Patient = str(request.user.get_username())
+                        x.save()
+                        return redirect('service-list')
                 else:
                     form = forms.Book()
-                    message= 'please choose between interval'
-                    return render(request, 'book/book.html', {'form': form, 'message':message})
+                    message = 'please choose between interval'
+                    return render(request, 'book/book.html', {'form': form, 'message': message})
                         
         else:
             form = forms.Book()

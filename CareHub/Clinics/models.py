@@ -31,6 +31,7 @@ class Service(models.Model):
 
 
 class Reservation(models.Model):
+    rManager =models.Manager()
     Clinic = models.ForeignKey(Service, on_delete=models.CASCADE, default=None)
     Doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, default=None)
     Booker = models.ForeignKey(User, on_delete=models.CASCADE)

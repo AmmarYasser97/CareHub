@@ -9,7 +9,7 @@
 
     <div class="row">
         {% for service in Services%}
-        {% if service.type == "c" or service.type == "C" %}
+        {% if service.type == "a" %}
         <div class="card col-md-2 col-md-offset-1" style="width: 18rem;">
             <img class=" rounded-circle card-img-top" src="/static/{{ service.image }}" alt="{{ service.name }}">
             <div class="card-body">

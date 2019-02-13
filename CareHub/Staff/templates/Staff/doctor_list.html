@@ -8,7 +8,7 @@
   </div>
 
   <div class="row">
-    {% for object in doctors%}
+    {% for doctor in doctors%}
     {% if doctor.availability %}
 <div class="card col-md-3 col-md-offset-1" style="width: 18rem;">
   <img class=" rounded-circle card-img-top" src="/static/{{ doctor.image }}" alt="{{ doctor.name }}">
