@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'star_ratings',
     'crispy_forms',
     'accounts',
     'Staff',
@@ -119,12 +120,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-#added by me to suit media(k)
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-# <<<<<<< HEAD
-# =======
-# #end of added....media(k) static==media
-# >>>>>>> 7d7fb54b74f71370e78f344fcf3b28f01ecb2897
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
