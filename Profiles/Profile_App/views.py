@@ -20,3 +20,19 @@ def patient(request):
     }
     return HttpResponse(template.render(context, request))
 
+
+# to save edit profile data in database
+
+def profile_edit(request):
+    if request.method == 'POST':
+        form = forms.ProfileEdit(request.POST, request.FILES)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.patient = request.user
+            instance.save()
+            return redirect('profile')
+        else:
+            form = forms.ProfileEdit()
+    else:
+        form = forms.ProfileEdit()
+    return render(request, 'Update_profile.html', {'forms': form})
