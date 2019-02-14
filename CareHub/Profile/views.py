@@ -9,10 +9,15 @@ from django.shortcuts import redirect
 
 def patient(request, name):
     template = loader.get_template('patient.html')
+    
+
+    Reservations = []
+    Reservations.extend(Reservation.rManager.filter(Booker=Patient.getter.get(pk=name).user))
+
     context = {
 
         'Patient': Patient.getter.get(pk=name),
-        'Reservations': Reservation.rManager.get(Booker=Patient.getter.get(pk=name).user),
+        'Reservations': Reservations
 
 
 
@@ -52,6 +57,7 @@ def profile_edit(request):
 def patient_update_form(request):
 
     template = loader.get_template('patient.html')
+    
     context = {
         'Patient': Patient.getter.get(pk=1),
     }
