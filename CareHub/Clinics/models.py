@@ -15,6 +15,8 @@ class Service(models.Model):
         ('b', 'Scan'),
     )
     name = models.CharField(max_length=50)
+    image = models.ImageField(default='default.jpg',upload_to='profile_pics', null=True)
+
     start_time = models.TimeField(auto_now=False, auto_now_add=False)
     end_time = models.TimeField(auto_now=False, auto_now_add=False)
     no_appointments = models.PositiveSmallIntegerField(default=0)
@@ -32,7 +34,6 @@ class Service(models.Model):
 
 class Reservation(models.Model):
     rManager =models.Manager()
-    image = models.ImageField(default='default.jpg', upload_to='profile_pics', null=True)
 
     Clinic = models.ForeignKey(Service, on_delete=models.CASCADE, default=None)
     Doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, default=None)
