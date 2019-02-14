@@ -8,11 +8,14 @@ from django.views.generic import UpdateView
 from Profile_App.models import Patient
 
 
-def patient(request):
+def patient(request,name):
     template = loader.get_template('patient.html')
+
     context = {
 
-        'Patient': Patient.objects.get(pk=3),
+
+
+        'Patient': Patient.objects.get(pk=name),
 
 
 
