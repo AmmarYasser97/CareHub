@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.template import loader
 from django.views.generic import UpdateView
 from .models import Patient
-from Clinics.models import Reservations
+from Clinics.models import Reservation
 from django.shortcuts import redirect
 
 
@@ -12,7 +12,7 @@ def patient(request, name):
     context = {
 
         'Patient': Patient.getter.get(pk=name),
-        'Reservations': Reservations.getter.get(Patient=Patient.getter.get(pk=name).user.username),
+        'Reservations': Reservation.rManager.get(Booker=Patient.getter.get(pk=name).user),
 
 
 
@@ -26,9 +26,6 @@ def patient_update(request, name):
     context = {
 
         'Patient': Patient.getter.get(pk=name),
-
-
-
 
     }
     return HttpResponse(template.render(context, request))

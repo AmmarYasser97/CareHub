@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'accounts',
     'Staff',
     'Clinics',
-    'Scans',
     'Profile',
 ]
 
