@@ -5,7 +5,7 @@ from django.views.generic import UpdateView
 from .models import Patient
 from Clinics.models import Reservation
 from django.shortcuts import redirect
-
+from django.views.generic.edit import UpdateView
 
 def patient(request, name):
     template = loader.get_template('patient.html')
@@ -24,6 +24,25 @@ def patient(request, name):
 
     }
     return HttpResponse(template.render(context, request))
+
+
+class ProfileUpdateView(UpdateView):
+    model = Patient
+    fields = ['image',
+              'Age',
+              'Blood_Type',
+              'Weight',
+              'Height',
+              'Contact',
+              'Allergies',
+              'Organ_Donor',
+              'Medications',
+              'Past_Operations',
+              'Family_History',
+              'Athletic',
+              'Smoker',
+              ]
+    template_name_suffix = '_update_form'
 
 
 def patient_update(request, name):

@@ -275,10 +275,9 @@
     <form action='patient_update/{{ Patient.pk }}' method='GET'>
 
       <div class="form-group " align="center">
-        <button class="add-question-btn" type="submit">Update Information</button>
+        <a href="{% url 'Profile:patient-update' Patient.pk %}" class="btn btn-info">Update Info</a>
       </div>
     </form>
-
 
     <footer style="background-color: #37c1cc" width="100%">
       <div class="row">
