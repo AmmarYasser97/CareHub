@@ -1,12 +1,16 @@
 
-from django.contrib import admin
-from django.urls import path
-from .import views
+from django.conf.urls import url
 
-app_name = 'profile_page'
+from django.urls import path
+
+from . import views
+
+app_name = 'Profile'
 urlpatterns = [
-    path(r'', views.profile, name="profile"),
-    path(r'edit', views.profile_edit),
+    url(r'^(?P<name>.+)/$$', views.patient, name='patient'),
+    path('<int:pk>/patient_update/', views.patient_update, name='patient_update'),
+    path('<int:pk>/patient_update_form/',
+         views.patient_update_form, name='patient_update_form',),
 
 
 ]

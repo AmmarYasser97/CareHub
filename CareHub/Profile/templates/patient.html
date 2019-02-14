@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>{{ Patient.user.username }} - Profile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  p {
+  font-size: 15px;
+  padding:10px;
+
+  }
+    .navbar-custom {
+    color: #FFFFFF;
+    background-color: #37c1cc;
+	}
+    .font-here{
+    color: #FFFFFF;
+    }
+.image {
+	border : 2px solid #37c1cc;
+	}
+  </style>
+  </head>
+
+<body>
+
+	<nav class="navbar navbar-default navbar-custom">
+          <div class="container-fluid">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="#"><img src="/static/carehubwhite.png"  width="130"></a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li><a href="">Home</a></li>
+              <li class="dropdown">
+                <a style="color:white;" class="dropdown-toggle" data-toggle="dropdown" href="#">Services
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="clinics.html">Clinics</a></li>
+                  <li><a href="Staff.html">Staff</a></li>
+                  <li><a href="scans.html">Scans</a></li>
+                </ul>
+              </li>
+
+            </ul>
+               <form class="navbar-form navbar-left" action="/action_page.php">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-btn">
+                      <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              <ul class="nav navbar-nav navbar-right">
+                      <li><a style="color:white;" href="#">{{ Patient.user.username }}</a></li>
+                      <li><a style="color:white;" href=""><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+              </ul>
+          </div>
+        </nav>
+<div class="container-fluid">
+
+  <div class = "jumbotron" style = "background:transparent">
+  <img class = "img-circle image" src ="{{ Patient.image.url }}" width = "200" height = "200" >
+    <h2 style = "font family:Solomon; color:#37c1cc;">{{ Patient.user.first_name }} {{ Patient.user.last_name }}</h2>
+
+  <ul class="nav nav-tabs" style = "font family:Solomon; color:#37c1cc;">
+  <li class="active"><a data-toggle="tab" href="#home">Basic info</a></li>
+  <li><a data-toggle="tab" href="#menu1">Medical History</a></li>
+  <li><a data-toggle="tab" href="#menu2">Additional info</a></li>
+  <li><a data-toggle="tab" href="#backlog">Backlog</a></li>
+
+</ul>
+
+<div class="tab-content">
+
+  <div id="home" class="tab-pane fade in active">
+    <table class="table">
+	<tbody>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Age </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ Patient.Age }} </h4> </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Blood Type </h4> </td>
+       <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ Patient.Blood_Type }} </h4> </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Weight </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ Patient.Weight }} </h4> </td>
+      </tr>
+	  <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Height </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{ Patient.Height }} </h4> </td>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Contact </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> 0{{ Patient.Contact }} </h4> </td>
+      </tr>
+
+	  </tr>
+
+    </tbody>
+
+
+	</table>
+
+  </div>
+
+
+  <div id="menu1" class="tab-pane fade">
+
+	<table class="table">
+	<tbody>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Allergies </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;">  {{Patient.Contact}} </h4> </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Organ Donor </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;">  {{Patient.Organ_Donor}} </h4> </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Medications </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{Patient.Medications}} </h4> </td>
+      </tr>
+	  <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Past operations </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{Patient.Past_Operations}} </h4> </td>
+		</tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Family History </h4> </td>
+        <td> <h4 style = "font family:Solomon; color:#23797f;"> {{Patient.Family_History}} </h4> </td>
+      </tr>
+
+
+    </tbody>
+
+
+	</table>
+
+  </div>
+  <div id="menu2" class="tab-pane fade">
+
+    <table class="table">
+	<tbody>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;">Athletic</h4> </td>
+         <td> <h4 style = "font family:Solomon; color:#23797f;"> {{Patient.Athletic}} </h4> </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> Smoker </h4> </td>
+         <td> <h4 style = "font family:Solomon; color:#23797f;"> {{Patient.Smoker}} </h4> </td>
+      </tr>
+	  <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;"> E-mail </h4> </td>
+         <td> <h4 style = "font family:Solomon; color:#23797f;"> {{Patient.user.email}} </h4> </td>
+		</tr>
+
+
+
+
+    </tbody>
+
+
+	</table>
+
+
+  </div>
+
+     <div id="backlog" class="tab-pane fade">
+
+    <table class="table">
+	<tbody>
+      <tr>
+            <td> <h4 style = "font family:Solomon; color:#37c1cc;">Clinic</h4> </td>
+            <td> <h4 style = "font family:Solomon; color:#23797f;">Doctor</h4> </td>
+            <td> <h4 style = "font family:Solomon; color:#23797f;">Time</h4> </td>
+      </tr>
+      <tr>
+        <td> <h4 style = "font family:Solomon; color:#37c1cc;">DUMMY</h4> </td>
+          <td> <h4 style = "font family:Solomon; color:#23797f;">DUMMY</h4> </td>
+          <td> <h4 style = "font family:Solomon; color:#23797f;">DUMMY</h4> </td>
+      </tr>
+
+    </tbody>
+	</table>
+
+
+  </div>
+
+
+</div>
+  </div>
+
+  </br>
+
+  
+<form action ='patient_update' method='GET'>
+
+            <div class="form-group "align ="center" >
+                <button  class="add-question-btn" type="submit">Update Information</button>
+            </div> </form>
+
+
+  <footer style = "background-color: #37c1cc" width = "100%">
+  <div class="row">
+  <div class="col-lg-12" align = "center">
+  <p align = "center">© 2018 Copyright</p>
+  </div>
+  </div>
+  </footer>
+
+  </body>
+  </html>

@@ -73,7 +73,8 @@ def SignIn (request):
                 return redirect ('accounts:receptionist')
             elif user is not None:
                 login(request, user)
-                return redirect ('accounts:profile')
+                name = request.Patient.pk
+                return redirect('Profile:patient' + name + '/' )
             else:
                 return render (request, 'accounts/signIN.html',{'form':form, 'error_message':'username or password is incorrect'})
     else:
