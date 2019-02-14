@@ -78,7 +78,7 @@ def SignIn (request):
             user = authenticate(request, username=username, password=password)
             if (user is not None and is_receptionist(user)):
                 login(request, user)
-                return redirect ('accounts:receptionist')
+                return redirect ('book')
             elif user is not None:
                 login(request, user)
                 name = str(Patient.getter.get(user=request.user).pk)
