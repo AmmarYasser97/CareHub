@@ -115,4 +115,4 @@ def book(request):
         else:
             Title = "Book"
             form = forms.Book()
-            return render(request, 'book/book.html', {'form': form, , 'Title': Title})
+            return render(request, 'book/book.html', {'form': form, 'Title': Title})
