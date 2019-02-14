@@ -1,10 +1,14 @@
 from .models import Doctor
+from django.contrib.auth.models import User, Group
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
 from django.views.generic.edit import UpdateView
 from django.views.generic.edit import DeleteView
 
+
+def is_receptionist(user):
+    return user.groups.filter(name='Receptionist').exists()
 
 class DoctorListView(ListView):
     model = Doctor
