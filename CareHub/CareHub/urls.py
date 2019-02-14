@@ -13,6 +13,7 @@ urlpatterns = [
 url(r'^ratings/', include('star_ratings.urls', namespace='ratings')),
     path('staff/', include('Staff.urls')),
     path('services/', include('Clinics.urls')),
+    path('profile/', include('Profile.urls')),
 
 ]
 
