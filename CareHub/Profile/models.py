@@ -44,8 +44,8 @@ class Patient(models.Model):
     Smoker = models.BooleanField(default=False)
 
 
-def __str__(self):
-        return f'{self.user.username} Patient'
+    def __str__(self):
+            return f'{self.user.username}'
 
-def get_absolute_url(self):
-        return reverse('patient', kwargs={'pk': self.pk})
+    def get_absolute_url(self):
+        return reverse('Profile:patient', kwargs={'name': self.pk})
