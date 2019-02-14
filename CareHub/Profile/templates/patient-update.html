@@ -72,8 +72,8 @@
       </ul>
 
 
-      <form class="patient_update_form" method="POST" action="/patient_update_form/">
-      {% csrf_token %}
+      <form class="patient_update_form" method="POST" action="/patient_update_form/{{ Patient.pk }}">
+        {% csrf_token %}
         <div id="Update" class="tab-pane fade in active">
           <table class="table">
             <tbody>
@@ -91,7 +91,7 @@
               </tr>
               <tr>
                 <td>Email</td>
-                <td><input type="email" name="Email"value="{{ Patient.user.email }}"></td>
+                <td><input type="email" name="Email" value="{{ Patient.user.email }}"></td>
               </tr>
               <tr>
                 <td>New Password</td>
@@ -105,14 +105,14 @@
               <tr>
                 <td>Blood Type</td>
                 <td><select name="BloodType" selected="{{ Patient.Blood_Type }}">
-                    <option value="A+" {% if Patient.Blood_Type == "A Positive" %} selected {% endif %}>A+</option>
-                    <option value="A-" {% if Patient.Blood_Type == "A Negative" %} selected {% endif %}>A-</option>
-                    <option value="B+" {% if Patient.Blood_Type == "B Positive" %} selected {% endif %}>B+</option>
-                    <option value="B-" {% if Patient.Blood_Type == "B Negative" %} selected {% endif %}>B-</option>
-                    <option value="O+" {% if Patient.Blood_Type == "O Positive" %} selected {% endif %}>O+</option>
-                    <option value="O-" {% if Patient.Blood_Type == "O Negative" %} selected {% endif %}>O-</option>
-                    <option value="AB+" {% if Patient.Blood_Type == "AB Positive" %} selected {% endif %}>AB+</option>
-                    <option value="AB-" {% if Patient.Blood_Type == "AB Negative" %} selected {% endif %}>AB-</option>
+                    <option value="A+" {% if Patient.Blood_Type=="A Positive" %} selected {% endif %}>A+</option>
+                    <option value="A-" {% if Patient.Blood_Type=="A Negative" %} selected {% endif %}>A-</option>
+                    <option value="B+" {% if Patient.Blood_Type=="B Positive" %} selected {% endif %}>B+</option>
+                    <option value="B-" {% if Patient.Blood_Type=="B Negative" %} selected {% endif %}>B-</option>
+                    <option value="O+" {% if Patient.Blood_Type=="O Positive" %} selected {% endif %}>O+</option>
+                    <option value="O-" {% if Patient.Blood_Type=="O Negative" %} selected {% endif %}>O-</option>
+                    <option value="AB+" {% if Patient.Blood_Type=="AB Positive" %} selected {% endif %}>AB+</option>
+                    <option value="AB-" {% if Patient.Blood_Type=="AB Negative" %} selected {% endif %}>AB-</option>
                   </select></td>
               </tr>
 
@@ -134,7 +134,7 @@
               </tr>
               <tr>
                 <td>Organ Donor</td>
-                <td><input type="checkbox" name="OrganDonor" {% if Patient.Organ_Donor == True %} checked {% endif %}></td>
+                <td><input type="checkbox" name="OrganDonor" {% if Patient.Organ_Donor==True %} checked {% endif %}></td>
               </tr>
               <tr>
                 <td>Medications</td>
@@ -150,11 +150,11 @@
               </tr>
               <tr>
                 <td>Athletic</td>
-                <td><input type="checkbox" name="Athletic" {% if Patient.Athletic == True %} checked {% endif %} ></td>
+                <td><input type="checkbox" name="Athletic" {% if Patient.Athletic==True %} checked {% endif %}></td>
               </tr>
               <tr>
                 <td>Smoker</td>
-                <td><input type="checkbox" name="Smoker" {% if Patient.Smoker == True %} checked {% endif %}></td>
+                <td><input type="checkbox" name="Smoker" {% if Patient.Smoker==True %} checked {% endif %}></td>
               </tr>
 
 

@@ -3,10 +3,11 @@ from django.shortcuts import render
 from django.template import loader
 from django.views.generic import UpdateView
 from .models import Patient
+from Clinics.models import Reservations
 from django.shortcuts import redirect
 
 
-def patient(request,name):
+def patient(request, name):
     template = loader.get_template('patient.html')
     context = {
 
@@ -16,14 +17,15 @@ def patient(request,name):
 
 
     }
-    return redirect('profile_page:patient' + name + '/')
+    return HttpResponse(template.render(context, request))
 
 
-def patient_update(request,name):
+def patient_update(request, name):
     template = loader.get_template('patient-update.html')
     context = {
 
         'Patient': Patient.getter.get(pk=name),
+        'Reservations': Reservations.getter.get(Patient=Patient.getter.get(pk=name).user.username),
 
 
 
@@ -111,4 +113,4 @@ def patient_update_form(request):
     Patient_Info.user.save()
     Patient_Info.save()
 
-    return patient(request)
+    return redirect('profile_page:patient' + name + '/')
