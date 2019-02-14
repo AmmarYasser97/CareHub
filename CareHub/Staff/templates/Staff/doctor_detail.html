@@ -21,8 +21,11 @@
         {% ratings object %}
 </h5>
     </div>
+    {% if request.user.is_receptionist %}
     <a class="btn btn-danger" href="{% url 'staff-delete' doctor.id %}">Delete</a>
     <a href="{% url 'staff-update' object.id %}" class="btn btn-info">Edit</a>
+    {% endif %}
+
     <br>
     <br>
 </div>
