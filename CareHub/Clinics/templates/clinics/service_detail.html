@@ -25,14 +25,6 @@
         <br>
     </div>
     {%if request.user.is_authenticated%}
-    <form action="post">
-        {% csrf_token %}
-        <input type="text" hidden value="{ object.name }" >
-        <input type="submit" class="btn btn-outline-primary" value="Book">  
-        
-
-
-    </form>
      <a href="{%url 'book' %}" class="btn btn-info">Book</a>
     <br>
     {%endif%}
