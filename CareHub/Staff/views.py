@@ -24,7 +24,7 @@ class DoctorCreateView(CreateView):
 
 class DoctorUpdateView(UpdateView):
     model = Doctor
-    fields = ['name', 'expertise', 'email', 'rating', 'availability']
+    fields = ['name', 'expertise', 'email', 'availability']
     template_name_suffix = '_update_form'
 
 
