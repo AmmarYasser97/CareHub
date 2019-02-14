@@ -12,6 +12,7 @@ def patient(request, name):
     context = {
 
         'Patient': Patient.getter.get(pk=name),
+        'Reservations': Reservations.getter.get(Patient=Patient.getter.get(pk=name).user.username),
 
 
 
@@ -25,7 +26,6 @@ def patient_update(request, name):
     context = {
 
         'Patient': Patient.getter.get(pk=name),
-        'Reservations': Reservations.getter.get(Patient=Patient.getter.get(pk=name).user.username),
 
 
 
