@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from .forms import RegisterForm, LoginForm
 from django.shortcuts import redirect
 from Profile.models import Patient
+from Profile.views import patient
 
 def is_receptionist(user):
     return user.groups.filter(name='Receptionist').exists()
@@ -14,7 +15,7 @@ def Receptionist (request):
 
 def profile (request):
     name = str(Patient.getter.get(user=request.user).pk)
-    return Patient(request,name)
+    return patient(request,name)
 
 def SignUp (request):
             # if this is a POST request we need to process the form data
@@ -60,7 +61,7 @@ def SignUp (request):
 
                 # redirect to accounts page:
                 name = str(Patient.getter.get(user=request.user).pk)
-                return Patient(request,name)
+                return patient(request,name)
 
    # No post data availabe, let's just show the page.
     else:
@@ -81,7 +82,7 @@ def SignIn (request):
             elif user is not None:
                 login(request, user)
                 name = str(Patient.getter.get(user=request.user).pk)
-                return Patient(request,name)
+                return patient(request,name)
 
             else:
                 return render (request, 'accounts/signIN.html',{'form':form, 'error_message':'username or password is incorrect'})
