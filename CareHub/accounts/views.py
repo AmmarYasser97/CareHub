@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .forms import RegisterForm, LoginForm
 from django.shortcuts import redirect
+from Profile.models import Patient
 
 def is_receptionist(user):
     return user.groups.filter(name='Receptionist').exists()
@@ -12,7 +13,8 @@ def Receptionist (request):
     return render(request, 'accounts/receptionist.html')
 
 def profile (request):
-    return render(request, 'accounts/profile.html')
+    name = str(Patient.getter.get(user=request.user).pk)
+    return Patient(request,name)
 
 def SignUp (request):
             # if this is a POST request we need to process the form data
@@ -49,11 +51,16 @@ def SignUp (request):
                 user.last_name = form.cleaned_data['last_name']
                 user.save()
 
+                p = Patient(user=user, Age=18, Blood_Type='AB', Weight=50, Height=50, Contact=111222333 )
+                p.save()
+
+
                 # Login the user
                 login(request, user)
 
                 # redirect to accounts page:
-                return redirect('accounts:profile')
+                name = str(Patient.getter.get(user=request.user).pk)
+                return Patient(request,name)
 
    # No post data availabe, let's just show the page.
     else:
@@ -73,8 +80,9 @@ def SignIn (request):
                 return redirect ('accounts:receptionist')
             elif user is not None:
                 login(request, user)
-                name = request.Patient.pk
-                return redirect('Profile:patient' + name + '/' )
+                name = str(Patient.getter.get(user=request.user).pk)
+                return Patient(request,name)
+
             else:
                 return render (request, 'accounts/signIN.html',{'form':form, 'error_message':'username or password is incorrect'})
     else:
