@@ -32,6 +32,8 @@ class Service(models.Model):
 
 class Reservation(models.Model):
     rManager =models.Manager()
+    image = models.ImageField(default='default.jpg', upload_to='profile_pics', null=True)
+
     Clinic = models.ForeignKey(Service, on_delete=models.CASCADE, default=None)
     Doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, default=None)
     Booker = models.ForeignKey(User, on_delete=models.CASCADE)
