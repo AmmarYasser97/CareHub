@@ -1,4 +1,4 @@
-﻿{% load static %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +13,9 @@
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
     <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
-    <link href="{% static 'style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <!--added now@ 5ames-->
+     <link href="{% static 'css/animate.css' %}" rel="stylesheet">
 </head>
 <body>
 <!--- navigation bar -->
@@ -60,40 +62,56 @@
 <footer>
     <div class="container-fluid padding">
         <div class="row text-center">
-            <div class="col-md-4">
-                <img src="https://raw.githubusercontent.com/ganzourii/SE2018G10/master/CareHub/media/carehubwhite.png"
+            <div class="col-md-4 ">
+                <img class="wow fadeInLeft" src="https://raw.githubusercontent.com/ganzourii/SE2018G10/master/CareHub/media/carehubwhite.png"
                      hight=3 width=130>
-                <hr class="light">
-                <p>5555-5555</p>
-                <p>email@hospital.com</p>
-                <p>100 Street Name</p>
-                <p>City,Country,00000</p>
+                <hr class="light wow fadeInLeft">
+                <p class="wow fadeInLeft">5555-5555</p>
+                <p class="wow fadeInLeft">email@hospital.com</p>
+                <p class="wow fadeInLeft">100 Street Name</p>
+                <p class="wow fadeInLeft">City,Country,00000</p>
             </div>
             <div class="col-md-4">
-                <hr class="light">
-                <h5>Our branches</h5>
-                <hr class="light">
-                <p>.......</p>
-                <p>.......</p>
-                <p>.......</p>
-                <p>.......</p>
+                <hr class="light wow fadeInLeft">
+                <h5 class="wow fadeInLeft">Our branches</h5>
+                <hr class="light wow fadeInLeft">
+                <p class="wow fadeInLeft">.......</p>
+                <p class="wow fadeInLeft">.......</p>
+                <p class="wow fadeInLeft">.......</p>
+                <p class="wow fadeInLeft">.......</p>
             </div>
-            <div class="col-md-4">
-                <hr class="light">
-                <h5>Our Services</h5>
-                <hr class="light">
-                <p>.......</p>
-                <p>.......</p>
-                <p>.......</p>
-                <p>.......</p>
+            <div class="col-md-4 wow fadeInLeft">
+                <hr class="light wow fadeInLeft">
+                <h5 class="wow fadeInLeft">Our Services</h5>
+                <hr class="light wow fadeInLeft">
+                <p class="wow fadeInLeft">.......</p>
+                <p class="wow fadeInLeft">.......</p>
+                <p class="wow fadeInLeft">.......</p>
+                <p class="wow fadeInLeft">.......</p>
             </div>
             <div class="col-12">
-                <hr class="light">
-                <h5>&copy; ainshams.com</h5>
+                <hr class="light wow fadeInLeft">
+                <h5 class="wow fadeInLeft">&copy; ainshams.com</h5>
             </div>
         </div>
     </div>
 </footer>
+<!-- JS  added 5ames-->
+            <!-- Bootstrap JavaScript -->
+        <script src="{% static 'js/jquery.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
+        <!-- Bx Slider JS -->
+        <script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
+
+        <!-- Add JS counter lib -->
+        <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+
+        <!-- Add wow js lib -->
+        <script src="{% static 'js/wow.min.js' %}"></script>
+
+        <!-- Custom Js -->
+        <script src="{% static 'js/custom.js' %}"></script>
 </body>
 </html>
