@@ -17,13 +17,34 @@ All the needed information about the hospital will be available for the user.
 http://ayasser.pythonanywhere.com/?fbclid=IwAR2mDzmOxkukAiEiM4XrXucKfa4OM83IxDjYmfr8fNfyht5xPdT_n7egliw
 
 
+## Important notes and links:
+- White Paper:
+
+
+- CareHub BRD (business requirement document):
+https://github.com/ganzourii/SE2018G10/blob/master/CareHUB-BRD.pdf
+
+- Final Version of SRS can be found in SRS_Final_Version folder: https://github.com/ganzourii/SE2018G10/blob/master/SRS_Final_Version/SRS-G10.pdf
+
+- Latest Source Code (multiple django Apps) can be found in CareHub folder:
+https://github.com/ganzourii/SE2018G10/tree/master/CareHub
+
+- Prototype files (frontend) can be found in the 'Prototype' folder:
+https://github.com/ganzourii/SE2018G10/tree/master/Prototype/Front-end
+
+- A video Showing The Whole user interface prototype:
+(https://www.youtube.com/watch?v=ybaoZFZPSXY)
+
+- A video showing the Receptionist's interface prototype:
+(https://www.youtube.com/watch?v=pKk7kWyZpXk)
+
+
 ## Built With
 
 * [Bootstrap](https://getbootstrap.com/docs/4.1/components/) - The css web framework used
 * [Django](https://docs.djangoproject.com/en/2.1/) - The back end frame work used
 * [Zenhub](https://www.zenhub.com/) - Project mangment tool used
 
-## Versioning
 
 ## Authors
 
@@ -40,16 +61,6 @@ http://ayasser.pythonanywhere.com/?fbclid=IwAR2mDzmOxkukAiEiM4XrXucKfa4OM83IxDjY
 
 See also the list of [contributors](https://github.com/ganzourii/SE2018G10/graphs/contributors) who participated in this project.
 
-## Additional notes
-- Final Version of SRS can be found in SRS_Final_Version folder
-
-- Prototype files can be found in the 'Prototype' folder
-
-- A video Showing The Whole user interface prototype:
-(https://www.youtube.com/watch?v=ybaoZFZPSXY)
-
-- A video showing the Receptionist's interface prototype:
-(https://www.youtube.com/watch?v=pKk7kWyZpXk)
 
 
 
