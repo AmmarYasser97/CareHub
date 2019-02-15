@@ -62,23 +62,14 @@ def book(request):
                 x = form.save(commit=False)
                 
                 if request.POST["TOR"] > str(x.Clinic.start_time) and request.POST["TOR"] < str(x.Clinic.end_time):
-                    if Reservation.rManager.filter(Day=request.POST['DOR'] , Clinic=request.POST['Clinic']).exists():
-                        if Reservation.rManager.filter(Time=request.POST['TOR'] , Clinic=request.POST['Clinic']).exists():
+                    if Reservation.rManager.filter(Day=request.POST['DOR']).exists():
+                        if Reservation.rManager.filter(Time=request.POST['TOR']).exists():
                             form = forms.BookR()
                             message = 'please choose another'
                             return render(request, 'book/book.html', {'form': form, 'message': message})
-                        else:
-                            x.Time = request.POST["TOR"]
-                            x.Day = request.POST["DOR"]
-                            x.Booker = request.user
-                            #x.Clinic.no_appointments += 1
-                            x.save()
-                            return redirect('service-list')
                 else:
-                    x.Time = request.POST["TOR"]
-                    x.Day = request.POST["DOR"]
+                
                     x.Booker = request.user
-                    #x.Clinic.no_appointments += 1
                     x.save()
                     return redirect('service-list')
 
@@ -101,30 +92,19 @@ def book(request):
                 x = form.save(commit=False)
                 if request.POST["TOR"] > str(x.Clinic.start_time) and request.POST["TOR"] < str(x.Clinic.end_time) :                           
                             
-                    if Reservation.rManager.filter(Day=request.POST['DOR'], Clinic=request.POST['Clinic']).exists():
-                        if Reservation.rManager.filter(Time=request.POST['TOR'], Clinic=request.POST['Clinic']).exists():
+                    if Reservation.rManager.filter(Day=request.POST['DOR']).exists():
+                        if Reservation.rManager.filter(Time=request.POST['TOR']).exists():
                             form = forms.Book()
                             Title = "Book"
                             message = 'please choose another'
                             return render(request, 'book/book.html', {'form': form, 'message': message, 'Title': Title})
-                        else:
-
-                            x.Booker = request.user
-                            x.Time= request.POST["TOR"]
-                            x.Day= request.POST["DOR"]
-                            x.Patient = str(request.user.get_username())
-                            #x.Clinic.no_appointments +=1
-                            x.save()
-                            return redirect('service-list')
                     else:
                         
                         x.Booker = request.user
                         x.Time= request.POST["TOR"]
                         x.Day= request.POST["DOR"]
                         x.Patient = str(request.user.get_username())
-                        #x.Clinic.no_appointments +=1
                         x.save()
-
                         return redirect('service-list')
                 else:
                     form = forms.Book()

@@ -3,6 +3,8 @@
 {% block content %}
 
 <div class="container">
+<br/>
+<br/>
     <div class="row">
         <form method="post" action="{% url 'book' %}">
             {% csrf_token %}
@@ -19,7 +21,18 @@
             <br>
             <input type="submit" value="create">
         </form>
+	
     </div>
+		<br/>
+		<div class="row">
+        <h6 style="color:#23797f">*Please Enter a timeslot in the available Opening hours of the desired service</h5>
+        <br/>
+		</div>
+		
+		<div class="row">
+		<h6 style="color:#23797f">Reservation will be added to the Backlog in your profile</h5>
+        </div>
+		<br/>
 </div>
 
 {% endblock content %}
