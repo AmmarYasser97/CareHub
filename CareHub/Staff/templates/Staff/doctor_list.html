@@ -11,7 +11,7 @@
     {% for doctor in doctors%}
     {% if doctor.availability %}
 <div class="card col-md-3 col-md-offset-1" style="width: 18rem;">
-  <img class=" rounded-circle card-img-top" src="/static/{{ doctor.image }}" alt="{{ doctor.name }}">
+  <img height="200px;" class=" rounded-circle card-img-top" src="/static/{{ doctor.image }}" alt="{{ doctor.name }}">
   <div class="card-body">
     <h5 class="card-title">{{ doctor.name }}</h5>
   </div>

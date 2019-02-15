@@ -15,7 +15,7 @@ class Service(models.Model):
         ('b', 'Scan'),
     )
     name = models.CharField(max_length=50)
-    image = models.ImageField(default='default.jpg',upload_to='profile_pics', null=True)
+    image = models.ImageField(default='default2.jpg',upload_to='profile_pics', null=True)
 
     start_time = models.TimeField(auto_now=False, auto_now_add=False)
     end_time = models.TimeField(auto_now=False, auto_now_add=False)
