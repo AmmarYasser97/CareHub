@@ -28,7 +28,7 @@ def patient(request, name):
 
 class ProfileUpdateView(UpdateView):
     model = Patient
-    fields = ['image',
+    fields = [
               'Age',
               'Blood_Type',
               'Weight',
