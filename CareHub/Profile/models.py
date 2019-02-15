@@ -19,8 +19,7 @@ class Patient(models.Model):
     Blood_Types = ((Op, 'O+'), (On, 'O-'), (Ap, 'A+'), (An, 'A-'), (Bp, 'B+'), (Bn, 'B-'), (ABp, 'AB+'), (ABn, 'AB-')
                    )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField(
-        default='patient_profile_pics/defaultPatient.jpg', upload_to='     patient_profile_pics')
+    image = models.ImageField(default='defaultPatient.jpg', upload_to='patient_profile_pics')
 
     # tkmlet User
 
