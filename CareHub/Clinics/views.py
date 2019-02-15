@@ -15,12 +15,30 @@ class ServiceListView(ListView):
     context_object_name = 'Services'
     ordering = ['name']
 
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        # Add in a QuerySet of all the books
+        Title = 'Services'
+        context['Services','Title'] = {Service.objects.all() , Title}
+        return {'Services':Service.objects.all(), 'Title':Title}
+
 
 class ClinicListView(ListView):
     model = Service
     context_object_name = 'Services'
     ordering = ['name']
     template_name = 'Clinics/clinic_list.html'
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        # Add in a QuerySet of all the books
+        Title = 'Clinics'
+        context['Services', 'Title'] = {Service.objects.all(), Title}
+        return {'Services': Service.objects.all(), 'Title': Title}
+    
+
 
 
 class ScanListView(ListView):
@@ -29,9 +47,27 @@ class ScanListView(ListView):
     ordering = ['name']
     template_name = 'Clinics/scan_list.html'
 
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        # Add in a QuerySet of all the books
+        Title = 'Scans'
+        context['Services', 'Title'] = {Service.objects.all(), Title}
+        return {'Services': Service.objects.all(), 'Title': Title}
+
 
 class ServiceDetailView(DetailView):
     model = Service
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        # Add in a QuerySet of all the books
+        #model = Service
+        Title = 'Services'
+        context['Title'] = Title
+        return context
+    
 
 
 class ServiceCreateView(CreateView):
