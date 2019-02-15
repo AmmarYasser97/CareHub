@@ -18,8 +18,9 @@ http://ayasser.pythonanywhere.com/?fbclid=IwAR2mDzmOxkukAiEiM4XrXucKfa4OM83IxDjY
 
 
 ## Important notes and links:
-- White Paper:
 
+- CareHub White Paper:
+https://github.com/ganzourii/SE2018G10/blob/master/CareHub - Whitepaper.png
 
 - CareHub BRD (business requirement document):
 https://github.com/ganzourii/SE2018G10/blob/master/CareHUB-BRD.pdf
