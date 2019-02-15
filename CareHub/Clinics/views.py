@@ -102,7 +102,8 @@ def book(request):
                         if Reservation.rManager.filter(Time=request.POST['TOR'] , Clinic=request.POST['Clinic']).exists():
                             form = forms.BookR()
                             message = 'please choose another'
-                            return render(request, 'book/book.html', {'form': form, 'message': message})
+                            Title="Receptionist Booking"
+                            return render(request, 'book/book.html', {'form': form, 'message': message, 'Title':Title})
                         else:
                             x.Time = request.POST["TOR"]
                             x.Day = request.POST["DOR"]
@@ -120,13 +121,15 @@ def book(request):
 
             else:
                     form = forms.BookR()
+                    Title = "Receptionist Booking"
                     message = 'please choose between interval'
-                    return render(request, 'book/book.html', {'form': form, 'message': message})
+                    return render(request, 'book/book.html', {'form': form, 'message': message,'Title':Title})
         
         
         else:
+            Title = "Receptionist Booking"
             form = forms.BookR()
-            return render(request, 'book/book.html', {'form': form})
+            return render(request, 'book/book.html', {'form': form, 'Title':Title})
 
 
     else:

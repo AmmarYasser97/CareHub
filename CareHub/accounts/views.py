@@ -92,4 +92,4 @@ def SignIn (request):
 
 def SignOut (request):
     logout(request)
-    return render (request, 'index.html')
+    return redirect('home')
