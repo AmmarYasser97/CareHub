@@ -12,20 +12,8 @@ home through this website.
 
 All the needed information about the hospital will be available for the user.
 
-## videos describing the website
-# please before getting into the repository watch these videos it describe whole project working in simple way
-# overview
-https://www.youtube.com/watch?v=7ZuA6wShijE&feature=youtu.be
-# receptionist
-https://youtu.be/dCUba4buuZQ
-# User_patient
-https://www.youtube.com/watch?v=rt_22wjfQ5o&feature=youtu.be
-# superUser(admin)
-https://youtu.be/4IcYxLZ7xuw
-
 ## Deployment
 http://ayasser.pythonanywhere.com/?fbclid=IwAR2mDzmOxkukAiEiM4XrXucKfa4OM83IxDjYmfr8fNfyht5xPdT_n7egliw
-
 
 ## Important notes and links:
 
@@ -39,6 +27,12 @@ https://github.com/ganzourii/SE2018G10/blob/master/CareHUB-BRD.pdf
 
 - Latest Source Code (multiple django Apps) can be found in CareHub folder:
 https://github.com/ganzourii/SE2018G10/tree/master/CareHub
+
+- Videos Describing the whole project:
+- Overview: https://www.youtube.com/watch?v=7ZuA6wShijE&feature=youtu.be
+- Receptionist: https://youtu.be/dCUba4buuZQ
+- Patient: https://www.youtube.com/watch?v=rt_22wjfQ5o&feature=youtu.be
+- Admin (superuser): https://youtu.be/4IcYxLZ7xuw
 
 - Prototype files (frontend) can be found in the 'Prototype' folder:
 https://github.com/ganzourii/SE2018G10/tree/master/Prototype/Front-end
