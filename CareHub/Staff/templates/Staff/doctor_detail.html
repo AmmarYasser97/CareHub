@@ -18,7 +18,9 @@
         <h5 style="color:#23797f;"> Email: {{object.email}} </h5>
         <br>
         <h5 style="color:#37c1cc;">
-        {% ratings object %}
+		{% if not request.user.is_staff %}
+			{% ratings object %}
+		{% endif %}
 </h5>
     </div>
     {% if request.user.is_superuser %}

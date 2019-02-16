@@ -51,7 +51,7 @@ def SignUp (request):
                 user.first_name = form.cleaned_data['first_name']
                 user.last_name = form.cleaned_data['last_name']
                 user.save()
-
+				
                 p = Patient(user=user, Age=request.POST['Age'], Blood_Type=request.POST['Blood_Type'], Weight=request.POST['Weight'], Height=request.POST['Height'], Contact=request.POST['Contact'] )
                 p.save()
 

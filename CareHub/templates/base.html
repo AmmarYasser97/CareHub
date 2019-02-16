@@ -47,7 +47,9 @@
                 <li><a class="nav-link" href="{% url 'accounts:signin' %}">Login</a></li>
                 {% endif %}
                 {% if request.user.is_authenticated %}
+					   {% if not request.user.is_staff %}
                 <li><a class="nav-link" href="{% url 'Profile:patient' request.user.pk %}">Profile</a></li>
+						{% endif %}
                 <li><a class="nav-link" href="{% url 'accounts:signout' %}">Logout</a></li>
                 {% endif %}
             </ul>
