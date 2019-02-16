@@ -12,6 +12,15 @@ home through this website.
 
 All the needed information about the hospital will be available for the user.
 
+## videos describing the website
+#please before getting into the repository watch these videos it describe whole project working in simple way
+#overview
+https://www.youtube.com/watch?v=7ZuA6wShijE&feature=youtu.be
+#receptionist
+https://youtu.be/dCUba4buuZQ
+#User_patient
+https://www.youtube.com/watch?v=rt_22wjfQ5o&feature=youtu.be
+#superUser(admin)
 
 ## Deployment
 http://ayasser.pythonanywhere.com/?fbclid=IwAR2mDzmOxkukAiEiM4XrXucKfa4OM83IxDjYmfr8fNfyht5xPdT_n7egliw
