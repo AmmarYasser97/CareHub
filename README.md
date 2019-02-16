@@ -21,6 +21,7 @@ https://youtu.be/dCUba4buuZQ
 # User_patient
 https://www.youtube.com/watch?v=rt_22wjfQ5o&feature=youtu.be
 # superUser(admin)
+https://youtu.be/4IcYxLZ7xuw
 
 ## Deployment
 http://ayasser.pythonanywhere.com/?fbclid=IwAR2mDzmOxkukAiEiM4XrXucKfa4OM83IxDjYmfr8fNfyht5xPdT_n7egliw
