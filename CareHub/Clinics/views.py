@@ -111,19 +111,19 @@ def book(request):
                             #x.Clinic.no_appointments += 1
                             x.save()
                             return redirect('service-list')
-                else:
-                    x.Time = request.POST["TOR"]
-                    x.Day = request.POST["DOR"]
-                    x.Booker = request.user
-                    #x.Clinic.no_appointments += 1
-                    x.save()
-                    return redirect('service-list')
+                    else:
+                        x.Time = request.POST["TOR"]
+                        x.Day = request.POST["DOR"]
+                        x.Booker = request.user
+                        #x.Clinic.no_appointments += 1
+                        x.save()
+                        return redirect('service-list')
 
-            else:
-                    form = forms.BookR()
-                    Title = "Receptionist Booking"
-                    message = 'please choose between interval'
-                    return render(request, 'book/book.html', {'form': form, 'message': message,'Title':Title})
+                else:
+                        form = forms.BookR()
+                        Title = "Receptionist Booking"
+                        message = 'please choose between interval'
+                        return render(request, 'book/book.html', {'form': form, 'message': message,'Title':Title})
         
         
         else:
