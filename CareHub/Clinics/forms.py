@@ -13,9 +13,11 @@ class Book(forms.ModelForm):
         model = models.Reservation
         
         fields = ['Clinic', 'Doctor']
+        labels = {'Clinic': ('Service'),}
 
 
 class BookR(forms.ModelForm):
     class Meta:
         model = models.Reservation
         fields = ['Clinic', 'Doctor', 'Patient']
+        labels = {'Clinic': ('Service'),}

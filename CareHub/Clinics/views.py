@@ -96,36 +96,40 @@ def book(request):
             form = forms.BookR(request.POST)
             if form.is_valid():
                 x = form.save(commit=False)
-                
-                if request.POST["TOR"] > str(x.Clinic.start_time) and request.POST["TOR"] < str(x.Clinic.end_time):
-                    if Reservation.rManager.filter(Day=request.POST['DOR'] , Clinic=request.POST['Clinic']).exists():
-                        if Reservation.rManager.filter(Time=request.POST['TOR'] , Clinic=request.POST['Clinic']).exists():
-                            form = forms.BookR()
-                            message = 'please choose another'
-                            Title="Receptionist Booking"
-                            return render(request, 'book/book.html', {'form': form, 'message': message, 'Title':Title})
+                if str(x.Doctor.expertise) == str(x.Clinic):
+                    
+                    if request.POST["TOR"] > str(x.Clinic.start_time) and request.POST["TOR"] < str(x.Clinic.end_time):
+                        if Reservation.rManager.filter(Day=request.POST['DOR'] , Clinic=request.POST['Clinic']).exists():
+                            if Reservation.rManager.filter(Time=request.POST['TOR'] , Clinic=request.POST['Clinic']).exists():
+                                form = forms.BookR()
+                                message = 'please choose another time slot'
+                                Title="Receptionist Booking"
+                                return render(request, 'book/book.html', {'form': form, 'message': message, 'Title':Title})
+                            else:
+                                x.Time = request.POST["TOR"]
+                                x.Day = request.POST["DOR"]
+                                x.Booker = request.user
+                                #x.Clinic.no_appointments += 1
+                                x.save()
+                                return render(request, 'clinics/service_list.html', {'success':"DONE!!",'Services':Service.objects.all(),'Title':"Services" })
                         else:
                             x.Time = request.POST["TOR"]
                             x.Day = request.POST["DOR"]
                             x.Booker = request.user
                             #x.Clinic.no_appointments += 1
                             x.save()
-                            return redirect('service-list')
-                    else:
-                        x.Time = request.POST["TOR"]
-                        x.Day = request.POST["DOR"]
-                        x.Booker = request.user
-                        #x.Clinic.no_appointments += 1
-                        x.save()
-                        return redirect('service-list')
+                            return render(request, 'clinics/service_list.html', {'success':"DONE!!",'Services':Service.objects.all(),'Title':"Services" })
 
+                    else:
+                            form = forms.BookR()
+                            Title = "Receptionist Booking"
+                            Dmessage = 'please choose between interval'
+                            return render(request, 'book/book.html', {'form': form, 'Dmessage': Dmessage,'Title':Title})
                 else:
-                        form = forms.BookR()
-                        Title = "Receptionist Booking"
-                        message = 'please choose between interval'
-                        return render(request, 'book/book.html', {'form': form, 'message': message,'Title':Title})
-        
-        
+                    form = forms.BookR()
+                    Title = "Book"
+                    Dmessage = 'please a doctor enrolled in this clinic'
+                    return render(request, 'book/book.html', {'form': form, 'Dmessage': Dmessage, 'Title': Title})
         else:
             Title = "Receptionist Booking"
             form = forms.BookR()
@@ -138,39 +142,47 @@ def book(request):
             form = forms.Book(request.POST)
             if form.is_valid():
                 x = form.save(commit=False)
-                if request.POST["TOR"] > str(x.Clinic.start_time) and request.POST["TOR"] < str(x.Clinic.end_time) :                           
-                            
-                    if Reservation.rManager.filter(Day=request.POST['DOR'], Clinic=request.POST['Clinic']).exists():
-                        if Reservation.rManager.filter(Time=request.POST['TOR'], Clinic=request.POST['Clinic']).exists():
-                            form = forms.Book()
-                            Title = "Book"
-                            message = 'please choose another'
-                            return render(request, 'book/book.html', {'form': form, 'message': message, 'Title': Title})
+                if str(x.Doctor.expertise) == str(x.Clinic):
+                    
+                    if request.POST["TOR"] > str(x.Clinic.start_time) and request.POST["TOR"] < str(x.Clinic.end_time) :                           
+                                
+                        if Reservation.rManager.filter(Day=request.POST['DOR'], Clinic=request.POST['Clinic']).exists():
+                            if Reservation.rManager.filter(Time=request.POST['TOR'], Clinic=request.POST['Clinic']).exists():
+                                form = forms.Book()
+                                Title = "Book"
+                                message = 'please choose another time slot'
+                                return render(request, 'book/book.html', {'form': form, 'message': message, 'Title': Title})
+                            else:
+                                
+
+                                x.Booker = request.user
+                                x.Time= request.POST["TOR"]
+                                x.Day= request.POST["DOR"]
+                                x.Patient = str(request.user.get_username())
+                                #x.Clinic.no_appointments +=1
+                                x.save()
+                                return render(request, 'clinics/service_list.html', {'success':"DONE!!",'Services':Service.objects.all(),'Title':"Services" })
                         else:
                             
-
                             x.Booker = request.user
                             x.Time= request.POST["TOR"]
                             x.Day= request.POST["DOR"]
                             x.Patient = str(request.user.get_username())
                             #x.Clinic.no_appointments +=1
                             x.save()
-                            return redirect('service-list')
+                            request.session['success']= "DONE!"
+                            return render(request, 'clinics/service_list.html', {'success':"DONE!!",'Services':Service.objects.all(),'Title':"Services" }) 
                     else:
-                        
-                        x.Booker = request.user
-                        x.Time= request.POST["TOR"]
-                        x.Day= request.POST["DOR"]
-                        x.Patient = str(request.user.get_username())
-                        #x.Clinic.no_appointments +=1
-                        x.save()
-
-                        return redirect('service-list')
+                        form = forms.Book()
+                        Title = "Book"
+                        message = 'please choose between interval'
+                        return render(request, 'book/book.html', {'form': form, 'message': message, 'Title': Title})
+                
                 else:
                     form = forms.Book()
                     Title = "Book"
-                    message = 'please choose between interval'
-                    return render(request, 'book/book.html', {'form': form, 'message': message, 'Title': Title})
+                    Dmessage = 'please a doctor enrolled in this clinic'
+                    return render(request, 'book/book.html', {'form': form, 'Dmessage': Dmessage, 'Title': Title})
                         
         else:
             Title = "Book"
