@@ -1,0 +1,64 @@
+//First video overview on project to get the concept
+-This a health care system for hosipitals
+-this how our website appears to ones who like to browse the internet and are not users
+- they can browse to see our staff but they can not rate them without login.(stars are off)
+-they can browse to see our clincs and our scans but they cannot book a reservation(no book button)
+- they can login if they already have an account or sign up for new account
+next videos we will show our actors in system
+//second video showing actors and the role of receptionist and
+ situation of one reserved at hosiptal offline with receptionist(guest) and
+user(patient) reserves online from home with the same time slot
+(so the system will ask one of them to choose another slot depending on who reserve first)
+also this rules applies for 2 online users 
+
+our actors that use the system are :
+1-receptonist that reserve for guests offline at hosiptal(we have
+for out system one receptionist account that we will give to the buyer of system
+the buyer can add more receptionists by using superuser)
+2-users(patients) our main users of system that have accounts and can reserve online
+ and rate doctors
+3-superuser that hold control of our system (add receptionists /add doctors /edit doctors
+delete doctors/ add clinics/delete......) also it's user and can be patient one day and can reserve
+clincs and be saved in its blog
+
+now imagine a guest called Manar come to hosiptal and wants to book offline a heart clinic with 
+magdy yagoob @ 2pm @7/7/2019 and Manar not a user doesn't have account 
+let's see that in database and aslo we will login with receptionist account to book for her offline
+and we will see that its reservation added to database and we will choose user patient in system 
+and try to book the same slot . Manar is not user let's now see that its reservation saved in data base by login in it by superuser
+as we see we have patient user called looda let's login with it and try to book same slot and see
+what happens! so when booking same slot doesnt accept when booking another slot accept 
+thanks!
+
+//video 3 about patient users
+let's know log in with looda as patient user and see what can we do !
+this reservation was reserved last video
+1-we can update its information
+2- we can book reservations and saved in backlog as seen in last video
+3-we can rate doctors now and for each patient there is a rate of doctor and overall rate of doctor
+depend on number of patients that rated him/her(average rate) if we logged with another patient 
+and rate same doctor it will take average rate but also we show rate of individual patient
+let's see i don't rember let's create anew patient and rate from it this doctor
+so rating comes from looda and new patient (4+3)/2=3.5 as average
+Thanks keep watching!
+
+//video 4 about super user
+now one can wonder who add this doctors to website it's the admin the super user as another name
+let's add another doctor to our website first we go to admin and enter superuser account
+before adding let's see our staff
+this our admin rofl alfy now our staff will increase by 1
+also superuser can edit and delete doctors from its panel our website
+also he/she can add clincs scans and delete them and edit them but clincs and scans from its panel
+ Thanks I hope it was clear
+
+
+
+
+
+
+
+
+
+
+
+-they don't have a profile that contains their info and blog
